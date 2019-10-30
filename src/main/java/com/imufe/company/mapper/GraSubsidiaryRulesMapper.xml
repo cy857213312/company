@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imufe.company.mapper.GraSubsidiaryRulesMapper">
+  <resultMap id="BaseResultMap" type="com.imufe.company.entity.GraSubsidiaryRules">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="gra_su_id" jdbcType="INTEGER" property="graSuId" />
+    <result column="number" jdbcType="VARCHAR" property="number" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="gist" jdbcType="VARCHAR" property="gist" />
+    <result column="score" jdbcType="VARCHAR" property="score" />
+    <result column="if_vote" jdbcType="INTEGER" property="ifVote" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, gra_su_id, number, content, type, gist, score, if_vote, state
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from gra_subsidiary_rules
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from gra_subsidiary_rules
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.imufe.company.entity.GraSubsidiaryRules">
+    insert into gra_subsidiary_rules (id, gra_su_id, number, 
+      content, type, gist, 
+      score, if_vote, state
+      )
+    values (#{id,jdbcType=INTEGER}, #{graSuId,jdbcType=INTEGER}, #{number,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{gist,jdbcType=VARCHAR}, 
+      #{score,jdbcType=VARCHAR}, #{ifVote,jdbcType=INTEGER}, #{state,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.imufe.company.entity.GraSubsidiaryRules">
+    insert into gra_subsidiary_rules
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="graSuId != null">
+        gra_su_id,
+      </if>
+      <if test="number != null">
+        number,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="gist != null">
+        gist,
+      </if>
+      <if test="score != null">
+        score,
+      </if>
+      <if test="ifVote != null">
+        if_vote,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="graSuId != null">
+        #{graSuId,jdbcType=INTEGER},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="gist != null">
+        #{gist,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null">
+        #{score,jdbcType=VARCHAR},
+      </if>
+      <if test="ifVote != null">
+        #{ifVote,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.imufe.company.entity.GraSubsidiaryRules">
+    update gra_subsidiary_rules
+    <set>
+      <if test="graSuId != null">
+        gra_su_id = #{graSuId,jdbcType=INTEGER},
+      </if>
+      <if test="number != null">
+        number = #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="gist != null">
+        gist = #{gist,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null">
+        score = #{score,jdbcType=VARCHAR},
+      </if>
+      <if test="ifVote != null">
+        if_vote = #{ifVote,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.imufe.company.entity.GraSubsidiaryRules">
+    update gra_subsidiary_rules
+    set gra_su_id = #{graSuId,jdbcType=INTEGER},
+      number = #{number,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      gist = #{gist,jdbcType=VARCHAR},
+      score = #{score,jdbcType=VARCHAR},
+      if_vote = #{ifVote,jdbcType=INTEGER},
+      state = #{state,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

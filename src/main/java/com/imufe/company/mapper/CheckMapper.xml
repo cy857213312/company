@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imufe.company.mapper.CheckMapper">
+  <resultMap id="BaseResultMap" type="com.imufe.company.entity.Check">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="sd_id" jdbcType="INTEGER" property="sdId" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="method" jdbcType="VARCHAR" property="method" />
+    <result column="kind" jdbcType="VARCHAR" property="kind" />
+    <result column="gs_id" jdbcType="INTEGER" property="gsId" />
+    <result column="gsr_id" jdbcType="INTEGER" property="gsrId" />
+    <result column="condition" jdbcType="VARCHAR" property="condition" />
+    <result column="score" jdbcType="INTEGER" property="score" />
+    <result column="create_time" jdbcType="DATE" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, sd_id, type, name, method, kind, gs_id, gsr_id, condition, score, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from check
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from check
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.imufe.company.entity.Check">
+    insert into check (id, sd_id, type, 
+      name, method, kind, 
+      gs_id, gsr_id, condition, 
+      score, create_time)
+    values (#{id,jdbcType=INTEGER}, #{sdId,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, 
+      #{name,jdbcType=VARCHAR}, #{method,jdbcType=VARCHAR}, #{kind,jdbcType=VARCHAR}, 
+      #{gsId,jdbcType=INTEGER}, #{gsrId,jdbcType=INTEGER}, #{condition,jdbcType=VARCHAR}, 
+      #{score,jdbcType=INTEGER}, #{createTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.imufe.company.entity.Check">
+    insert into check
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="sdId != null">
+        sd_id,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="method != null">
+        method,
+      </if>
+      <if test="kind != null">
+        kind,
+      </if>
+      <if test="gsId != null">
+        gs_id,
+      </if>
+      <if test="gsrId != null">
+        gsr_id,
+      </if>
+      <if test="condition != null">
+        condition,
+      </if>
+      <if test="score != null">
+        score,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="sdId != null">
+        #{sdId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="method != null">
+        #{method,jdbcType=VARCHAR},
+      </if>
+      <if test="kind != null">
+        #{kind,jdbcType=VARCHAR},
+      </if>
+      <if test="gsId != null">
+        #{gsId,jdbcType=INTEGER},
+      </if>
+      <if test="gsrId != null">
+        #{gsrId,jdbcType=INTEGER},
+      </if>
+      <if test="condition != null">
+        #{condition,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null">
+        #{score,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.imufe.company.entity.Check">
+    update check
+    <set>
+      <if test="sdId != null">
+        sd_id = #{sdId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="method != null">
+        method = #{method,jdbcType=VARCHAR},
+      </if>
+      <if test="kind != null">
+        kind = #{kind,jdbcType=VARCHAR},
+      </if>
+      <if test="gsId != null">
+        gs_id = #{gsId,jdbcType=INTEGER},
+      </if>
+      <if test="gsrId != null">
+        gsr_id = #{gsrId,jdbcType=INTEGER},
+      </if>
+      <if test="condition != null">
+        condition = #{condition,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null">
+        score = #{score,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.imufe.company.entity.Check">
+    update check
+    set sd_id = #{sdId,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      method = #{method,jdbcType=VARCHAR},
+      kind = #{kind,jdbcType=VARCHAR},
+      gs_id = #{gsId,jdbcType=INTEGER},
+      gsr_id = #{gsrId,jdbcType=INTEGER},
+      condition = #{condition,jdbcType=VARCHAR},
+      score = #{score,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

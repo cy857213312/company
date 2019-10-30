@@ -5,7 +5,7 @@
 <generatorConfiguration>
 
     <!-- 本地数据库驱动程序jar包的全路径 -->
-    <classPathEntry location="C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\8.0.13"/>
+    <classPathEntry location="C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar"/>
 
     <context id="context" targetRuntime="MyBatis3">
         <commentGenerator>
@@ -15,7 +15,7 @@
         </commentGenerator>
 
         <!-- 数据库的相关配置 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://10.6.12.30:3306/company" userId="root" password="123456"/>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/company" userId="root" password="123456"/>
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
@@ -39,7 +39,14 @@
 
 
         <!-- <table tableName="teacher" domainObjectName="Teacher" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>-->
-        <table tableName="teacher_certificate_photo" domainObjectName="Teacher_Certificate_Photo" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
-
+        <table tableName="area" domainObjectName="Area" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+        <table tableName="check" domainObjectName="Check" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+        <table tableName="area" domainObjectName="Area" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+        <table tableName="company" domainObjectName="Company" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+        <table tableName="grademanage" domainObjectName="Grademanage" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+        <table tableName="gra_subsidiary" domainObjectName="GraSubsidiary" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+        <table tableName="gra_subsidiary_rules" domainObjectName="GraSubsidiaryRules" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+        <table tableName="security_department" domainObjectName="SecurityDepartment" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+        <table tableName="user" domainObjectName="User" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
     </context>
 </generatorConfiguration>

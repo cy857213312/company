@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imufe.company.mapper.CompanyMapper">
+  <resultMap id="BaseResultMap" type="com.imufe.company.entity.Company">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="uscc" jdbcType="VARCHAR" property="uscc" />
+    <result column="nature" jdbcType="VARCHAR" property="nature" />
+    <result column="legal" jdbcType="VARCHAR" property="legal" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="fax" jdbcType="VARCHAR" property="fax" />
+    <result column="mail" jdbcType="VARCHAR" property="mail" />
+    <result column="production_permit" jdbcType="VARCHAR" property="productionPermit" />
+    <result column="number" jdbcType="VARCHAR" property="number" />
+    <result column="produce" jdbcType="VARCHAR" property="produce" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="security_department_id" jdbcType="INTEGER" property="securityDepartmentId" />
+    <result column="area_id" jdbcType="INTEGER" property="areaId" />
+    <result column="main_person" jdbcType="INTEGER" property="mainPerson" />
+    <result column="middle_person" jdbcType="INTEGER" property="middlePerson" />
+    <result column="safety_person" jdbcType="INTEGER" property="safetyPerson" />
+    <result column="technology_person" jdbcType="INTEGER" property="technologyPerson" />
+    <result column="work_person" jdbcType="INTEGER" property="workPerson" />
+    <result column="handle_person" jdbcType="INTEGER" property="handlePerson" />
+    <result column="key_technolo" jdbcType="VARCHAR" property="keyTechnolo" />
+    <result column="major_hazard" jdbcType="VARCHAR" property="majorHazard" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, address, uscc, nature, legal, phone, fax, mail, production_permit, number, 
+    produce, type, security_department_id, area_id, main_person, middle_person, safety_person, 
+    technology_person, work_person, handle_person, key_technolo, major_hazard
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from company
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from company
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.imufe.company.entity.Company">
+    insert into company (id, name, address, 
+      uscc, nature, legal, 
+      phone, fax, mail, production_permit, 
+      number, produce, type, 
+      security_department_id, area_id, main_person, 
+      middle_person, safety_person, technology_person, 
+      work_person, handle_person, key_technolo, 
+      major_hazard)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{uscc,jdbcType=VARCHAR}, #{nature,jdbcType=VARCHAR}, #{legal,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, #{mail,jdbcType=VARCHAR}, #{productionPermit,jdbcType=VARCHAR}, 
+      #{number,jdbcType=VARCHAR}, #{produce,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{securityDepartmentId,jdbcType=INTEGER}, #{areaId,jdbcType=INTEGER}, #{mainPerson,jdbcType=INTEGER}, 
+      #{middlePerson,jdbcType=INTEGER}, #{safetyPerson,jdbcType=INTEGER}, #{technologyPerson,jdbcType=INTEGER}, 
+      #{workPerson,jdbcType=INTEGER}, #{handlePerson,jdbcType=INTEGER}, #{keyTechnolo,jdbcType=VARCHAR}, 
+      #{majorHazard,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.imufe.company.entity.Company">
+    insert into company
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="uscc != null">
+        uscc,
+      </if>
+      <if test="nature != null">
+        nature,
+      </if>
+      <if test="legal != null">
+        legal,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="fax != null">
+        fax,
+      </if>
+      <if test="mail != null">
+        mail,
+      </if>
+      <if test="productionPermit != null">
+        production_permit,
+      </if>
+      <if test="number != null">
+        number,
+      </if>
+      <if test="produce != null">
+        produce,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="securityDepartmentId != null">
+        security_department_id,
+      </if>
+      <if test="areaId != null">
+        area_id,
+      </if>
+      <if test="mainPerson != null">
+        main_person,
+      </if>
+      <if test="middlePerson != null">
+        middle_person,
+      </if>
+      <if test="safetyPerson != null">
+        safety_person,
+      </if>
+      <if test="technologyPerson != null">
+        technology_person,
+      </if>
+      <if test="workPerson != null">
+        work_person,
+      </if>
+      <if test="handlePerson != null">
+        handle_person,
+      </if>
+      <if test="keyTechnolo != null">
+        key_technolo,
+      </if>
+      <if test="majorHazard != null">
+        major_hazard,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="uscc != null">
+        #{uscc,jdbcType=VARCHAR},
+      </if>
+      <if test="nature != null">
+        #{nature,jdbcType=VARCHAR},
+      </if>
+      <if test="legal != null">
+        #{legal,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="mail != null">
+        #{mail,jdbcType=VARCHAR},
+      </if>
+      <if test="productionPermit != null">
+        #{productionPermit,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="produce != null">
+        #{produce,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="securityDepartmentId != null">
+        #{securityDepartmentId,jdbcType=INTEGER},
+      </if>
+      <if test="areaId != null">
+        #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="mainPerson != null">
+        #{mainPerson,jdbcType=INTEGER},
+      </if>
+      <if test="middlePerson != null">
+        #{middlePerson,jdbcType=INTEGER},
+      </if>
+      <if test="safetyPerson != null">
+        #{safetyPerson,jdbcType=INTEGER},
+      </if>
+      <if test="technologyPerson != null">
+        #{technologyPerson,jdbcType=INTEGER},
+      </if>
+      <if test="workPerson != null">
+        #{workPerson,jdbcType=INTEGER},
+      </if>
+      <if test="handlePerson != null">
+        #{handlePerson,jdbcType=INTEGER},
+      </if>
+      <if test="keyTechnolo != null">
+        #{keyTechnolo,jdbcType=VARCHAR},
+      </if>
+      <if test="majorHazard != null">
+        #{majorHazard,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.imufe.company.entity.Company">
+    update company
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="uscc != null">
+        uscc = #{uscc,jdbcType=VARCHAR},
+      </if>
+      <if test="nature != null">
+        nature = #{nature,jdbcType=VARCHAR},
+      </if>
+      <if test="legal != null">
+        legal = #{legal,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        fax = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="mail != null">
+        mail = #{mail,jdbcType=VARCHAR},
+      </if>
+      <if test="productionPermit != null">
+        production_permit = #{productionPermit,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        number = #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="produce != null">
+        produce = #{produce,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="securityDepartmentId != null">
+        security_department_id = #{securityDepartmentId,jdbcType=INTEGER},
+      </if>
+      <if test="areaId != null">
+        area_id = #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="mainPerson != null">
+        main_person = #{mainPerson,jdbcType=INTEGER},
+      </if>
+      <if test="middlePerson != null">
+        middle_person = #{middlePerson,jdbcType=INTEGER},
+      </if>
+      <if test="safetyPerson != null">
+        safety_person = #{safetyPerson,jdbcType=INTEGER},
+      </if>
+      <if test="technologyPerson != null">
+        technology_person = #{technologyPerson,jdbcType=INTEGER},
+      </if>
+      <if test="workPerson != null">
+        work_person = #{workPerson,jdbcType=INTEGER},
+      </if>
+      <if test="handlePerson != null">
+        handle_person = #{handlePerson,jdbcType=INTEGER},
+      </if>
+      <if test="keyTechnolo != null">
+        key_technolo = #{keyTechnolo,jdbcType=VARCHAR},
+      </if>
+      <if test="majorHazard != null">
+        major_hazard = #{majorHazard,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.imufe.company.entity.Company">
+    update company
+    set name = #{name,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      uscc = #{uscc,jdbcType=VARCHAR},
+      nature = #{nature,jdbcType=VARCHAR},
+      legal = #{legal,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      fax = #{fax,jdbcType=VARCHAR},
+      mail = #{mail,jdbcType=VARCHAR},
+      production_permit = #{productionPermit,jdbcType=VARCHAR},
+      number = #{number,jdbcType=VARCHAR},
+      produce = #{produce,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      security_department_id = #{securityDepartmentId,jdbcType=INTEGER},
+      area_id = #{areaId,jdbcType=INTEGER},
+      main_person = #{mainPerson,jdbcType=INTEGER},
+      middle_person = #{middlePerson,jdbcType=INTEGER},
+      safety_person = #{safetyPerson,jdbcType=INTEGER},
+      technology_person = #{technologyPerson,jdbcType=INTEGER},
+      work_person = #{workPerson,jdbcType=INTEGER},
+      handle_person = #{handlePerson,jdbcType=INTEGER},
+      key_technolo = #{keyTechnolo,jdbcType=VARCHAR},
+      major_hazard = #{majorHazard,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
