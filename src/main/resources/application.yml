@@ -18,4 +18,3 @@ spring:
     prefix: classpath:/templates/
 
 
-
