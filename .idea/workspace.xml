@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01b1c6db-01bd-453b-8436-a02f9a84dfeb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/common/swagger/Swagger2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/company.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/company.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/controller/TestController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,12 +39,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="c4095d54911f8e6171e5742c8de0614b1cfd082c" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -58,6 +62,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectId" id="1T3y4wn5CdS8NwkxPJtCppaAufh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -76,6 +81,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RunDashboard">
@@ -174,6 +180,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.CompanyApplication" />
+        <item itemvalue="Spring Boot.CompanyApplication" />
+        <item itemvalue="Spring Boot.CompanyApplication" />
+        <item itemvalue="Spring Boot.CompanyApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -194,6 +203,7 @@
       <workItem from="1572491578675" duration="1951000" />
       <workItem from="1572494361600" duration="642000" />
       <workItem from="1572495038779" duration="5114000" />
+      <workItem from="1572702944204" duration="3764000" />
     </task>
     <task id="LOCAL-00001" summary="workspace.xml">
       <created>1572531492509</created>
@@ -216,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572532268724</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="workspace.xml">
+      <created>1572532481487</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572532481487</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +244,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -236,6 +255,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="workspace.xml" />
     <option name="LAST_COMMIT_MESSAGE" value="workspace.xml" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="249" height="532" key="Git.Branch.Popup" />
+    <state width="249" height="532" key="Git.Branch.Popup/1920.1080" />
+    <state width="249" height="532" key="Git.Branch.Popup@1920.1080@120dpi" />
   </component>
   <component name="masterDetails">
     <states>
