@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01b1c6db-01bd-453b-8436-a02f9a84dfeb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/dto/PosDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/service/AreaService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/service/Impl/AreaServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/normalize.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/css/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/css/normalize.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/CompanyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/CompanyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/controller/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/mapper/AreaMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/mapper/AreaMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/mapper/AreaMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/mapper/AreaMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.jsp" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +82,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -87,6 +90,16 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\company\src\main\resources\templates\admin" />
+      <recent name="D:\IdeaProjects\company\src\main\resources\static" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\company\src\main\resources\templates" />
+      <recent name="D:\IdeaProjects\company\src\main\resources\static" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -209,7 +222,7 @@
       <workItem from="1572495038779" duration="5114000" />
       <workItem from="1572702944204" duration="4244000" />
       <workItem from="1572969596572" duration="222000" />
-      <workItem from="1573037534902" duration="3570000" />
+      <workItem from="1573037534902" duration="9980000" />
     </task>
     <task id="LOCAL-00001" summary="workspace.xml">
       <created>1572531492509</created>
@@ -246,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572708662616</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="写法举例">
+      <created>1573047986973</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1573047986973</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +288,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="workspace.xml" />
     <MESSAGE value="swagger2 更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="swagger2 更新" />
+    <MESSAGE value="写法举例" />
+    <option name="LAST_COMMIT_MESSAGE" value="写法举例" />
   </component>
   <component name="WindowStateProjectService">
     <state width="249" height="532" key="Git.Branch.Popup" />
