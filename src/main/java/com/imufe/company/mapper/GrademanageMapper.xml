@@ -6,10 +6,9 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="uscc" jdbcType="VARCHAR" property="uscc" />
-    <result column="gs_id" jdbcType="INTEGER" property="gsId" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, address, uscc, gs_id
+    id, name, address, uscc
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -23,9 +22,9 @@
   </delete>
   <insert id="insert" parameterType="com.imufe.company.entity.Grademanage">
     insert into grademanage (id, name, address, 
-      uscc, gs_id)
+      uscc)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
-      #{uscc,jdbcType=VARCHAR}, #{gsId,jdbcType=INTEGER})
+      #{uscc,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.imufe.company.entity.Grademanage">
     insert into grademanage
@@ -42,9 +41,6 @@
       <if test="uscc != null">
         uscc,
       </if>
-      <if test="gsId != null">
-        gs_id,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -58,9 +54,6 @@
       </if>
       <if test="uscc != null">
         #{uscc,jdbcType=VARCHAR},
-      </if>
-      <if test="gsId != null">
-        #{gsId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -76,9 +69,6 @@
       <if test="uscc != null">
         uscc = #{uscc,jdbcType=VARCHAR},
       </if>
-      <if test="gsId != null">
-        gs_id = #{gsId,jdbcType=INTEGER},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -86,8 +76,8 @@
     update grademanage
     set name = #{name,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
-      uscc = #{uscc,jdbcType=VARCHAR},
-      gs_id = #{gsId,jdbcType=INTEGER}
+      uscc = #{uscc,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
 </mapper>

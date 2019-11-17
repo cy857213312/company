@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01b1c6db-01bd-453b-8436-a02f9a84dfeb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/service/AdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/service/Impl/AdminServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/controller/GrademanageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/service/GrademanageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/service/Impl/GrademanageServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/mapper/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/mapper/AdminMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/service/AreaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/service/AreaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/service/Impl/AreaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/service/Impl/AreaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/entity/GraSubsidiary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/entity/GraSubsidiary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/entity/Grademanage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/entity/Grademanage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/mapper/GraSubsidiaryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/mapper/GraSubsidiaryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/mapper/GraSubsidiaryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/mapper/GraSubsidiaryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/mapper/GrademanageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/mapper/GrademanageMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/imufe/company/mapper/GrademanageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/imufe/company/mapper/GrademanageMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-generator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-generator.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,8 +64,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="alwaysUpdateSnapshots" value="true" />
-        <option name="mavenHome" value="E:/JavaSource/apache-maven-3.3.9" />
-        <option name="userSettingsFile" value="E:\JavaSource\apache-maven-3.3.9\conf\settings.xml" />
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -88,7 +88,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -223,7 +223,7 @@
       <workItem from="1572969596572" duration="222000" />
       <workItem from="1573037534902" duration="9980000" />
       <workItem from="1573135216488" duration="445000" />
-      <workItem from="1573561622533" duration="17706000" />
+      <workItem from="1573561622533" duration="19171000" />
     </task>
     <task id="LOCAL-00001" summary="workspace.xml">
       <created>1572531492509</created>
@@ -267,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573047986973</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="admin 登录">
+      <created>1574002358527</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1574002358527</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +297,8 @@
     <MESSAGE value="workspace.xml" />
     <MESSAGE value="swagger2 更新" />
     <MESSAGE value="写法举例" />
-    <option name="LAST_COMMIT_MESSAGE" value="写法举例" />
+    <MESSAGE value="admin 登录" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin 登录" />
   </component>
   <component name="WindowStateProjectService">
     <state width="249" height="532" key="Git.Branch.Popup" />

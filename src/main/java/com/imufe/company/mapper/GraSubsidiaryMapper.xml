@@ -3,13 +3,14 @@
 <mapper namespace="com.imufe.company.mapper.GraSubsidiaryMapper">
   <resultMap id="BaseResultMap" type="com.imufe.company.entity.GraSubsidiary">
     <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="g_id" jdbcType="INTEGER" property="gId" />
     <result column="num" jdbcType="VARCHAR" property="num" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="score" jdbcType="INTEGER" property="score" />
     <result column="weight" jdbcType="DOUBLE" property="weight" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, num, name, score, weight
+    id, g_id, num, name, score, weight
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -22,16 +23,19 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.imufe.company.entity.GraSubsidiary">
-    insert into gra_subsidiary (id, num, name, 
-      score, weight)
-    values (#{id,jdbcType=INTEGER}, #{num,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
-      #{score,jdbcType=INTEGER}, #{weight,jdbcType=DOUBLE})
+    insert into gra_subsidiary (id, g_id, num, 
+      name, score, weight)
+    values (#{id,jdbcType=INTEGER}, #{gId,jdbcType=INTEGER}, #{num,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{score,jdbcType=INTEGER}, #{weight,jdbcType=DOUBLE})
   </insert>
   <insert id="insertSelective" parameterType="com.imufe.company.entity.GraSubsidiary">
     insert into gra_subsidiary
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
+      </if>
+      <if test="gId != null">
+        g_id,
       </if>
       <if test="num != null">
         num,
@@ -50,6 +54,9 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
+      <if test="gId != null">
+        #{gId,jdbcType=INTEGER},
+      </if>
       <if test="num != null">
         #{num,jdbcType=VARCHAR},
       </if>
@@ -67,6 +74,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.imufe.company.entity.GraSubsidiary">
     update gra_subsidiary
     <set>
+      <if test="gId != null">
+        g_id = #{gId,jdbcType=INTEGER},
+      </if>
       <if test="num != null">
         num = #{num,jdbcType=VARCHAR},
       </if>
@@ -84,10 +94,12 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.imufe.company.entity.GraSubsidiary">
     update gra_subsidiary
-    set num = #{num,jdbcType=VARCHAR},
+    set g_id = #{gId,jdbcType=INTEGER},
+      num = #{num,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR},
       score = #{score,jdbcType=INTEGER},
       weight = #{weight,jdbcType=DOUBLE}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
 </mapper>

@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 public class GraSubsidiary {
     private Integer id;
 
+    private Integer gId;
+
     private String num;
 
     private String name;

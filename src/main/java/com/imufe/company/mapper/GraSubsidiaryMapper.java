@@ -3,6 +3,7 @@ package com.imufe.company.mapper;
 import com.imufe.company.entity.GraSubsidiary;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 
 @Repository
 public interface GraSubsidiaryMapper {
@@ -17,4 +18,5 @@ public interface GraSubsidiaryMapper {
     int updateByPrimaryKeySelective(GraSubsidiary record);
 
     int updateByPrimaryKey(GraSubsidiary record);
+
 }

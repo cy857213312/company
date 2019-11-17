@@ -14,7 +14,5 @@ public class Grademanage {
 
     private String uscc;
 
-    private Integer gsId;
-
 
 }
