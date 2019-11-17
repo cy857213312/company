@@ -143,17 +143,23 @@
 	<script>
 		function adminLogin() {
 
+			var admin={
+				name: $("#name").val(),
+				password: $("#password").val()
+			}
 			$.ajax({
 				type: "post", // 提交方式
 				// 返回数据类型，*注意如果返回值为String类型则需要去掉此条
-			//	dataType: "json",
-				url: "/UserController/selectPos", // 访问路径
-				data: { // 提交数据
-					/*	"username": "admin", // 前者为字段名，后者为数据
-                        "password": "admin"*/
-				},
+				//dataType: "json",
+				contentType: "application/json;charset=utf-8",
+				url: "/AdminController/adminLogin", // 访问路径
+				data: JSON.stringify(admin),
 				success(data) { // 成功调用的回调函数
-					alert(data);
+					if (data == null || data == "") {
+						alert("失败")
+					} else {
+					alert("成功");
+					}
 				},
 				error() { // 调用失败
 					alert("ajax出错，未能成功访问路径");
@@ -172,11 +178,11 @@
 					<form class="form-horizontal">
 						<span class="heading">用户登录</span>
 						<div class="form-group">
-							<input type="email" class="form-control" id="inputEmail3" placeholder="用户名或电子邮件">
+							<input type="text" class="form-control" id='name' placeholder="用户名" >
 							<i class="fa fa-user"></i>
 						</div>
 						<div class="form-group help">
-							<input type="password" class="form-control" id="inputPassword3" placeholder="密　码">
+							<input type="password" class="form-control" id='password' placeholder="密　码">
 							<i class="fa fa-lock"></i>
 							<a href="#" class="fa fa-question-circle"></a>
 						</div>
@@ -194,7 +200,7 @@
 		</div>
 	</div>
 	<div style="text-align:center;">
-<p>来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
+
 </div>
 </body>
 </html>

@@ -12,6 +12,22 @@ spring:
     numTestsPerEvictionRun: 50
       #连接池中连接，在时间段内一直空闲，被逐出连接池的时间(1000*60*60)，以毫秒为单位
     minEvictableIdleTimeMillis: 3600000
+server:
+  # 服务http端口
+  port: 8080
+  # tomcat配置
+  tomcat:
+    # 最大线程数
+    max-threads: 6
+    # 最小线程数
+    min-spare-threads: 3
+    # 队列长度
+    accept-count: 10
+    # 最大链接数
+    max-connections: 1000
+    #链接建立超时时间
+  connection-timeout: 10000
+
 
 
 
