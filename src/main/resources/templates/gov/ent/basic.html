@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="gov/public :: #public_head">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <!--主标题 -->
+  <header class="main-header" th:replace="gov/public :: #public_header">
+  </header>
+  <!-- 左列。包含徽标和边栏-->
+  <aside class="main-sidebar" th:replace="gov/public :: #public_aside">
+  </aside>
+
+  <!-- 内容包装器。包含页面内容 -->
+  <div class="content-wrapper">
+  	<section class="content-header">
+      	<a th:href="@{/basic}"><button  type="button" class="btn btn-block btn-outline-secondary" style="width: 200px;height: 40px;margin-right: 10px; float: left;background-color: #E2ECF5;">基本信息</button></a>
+        <a th:href="@{/person}" ><button type="button" class="btn btn-block btn-outline-secondary" style="width: 200px;height: 40px;margin-right: 10px; float: left;" >人员信息</button></a>
+		<a th:href="@{/else}" > <button type="button" class="btn btn-block btn-outline-secondary"style="width: 200px;height: 40px;" >其它信息</button></a>
+	</section>
+    <!-- 主要内容 -->
+    <section class="content container-fluid">
+			<!--你的内容-->
+  		<div class="box">
+            <div class="box-header">
+              <h3 class="box-title">基本信息</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table class="table table-condensed" >
+		                <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">企业名称</label><span style="color: red;">*</span></td> 
+			                  <td><input  class="form-control" th:value="${company.name}" value="易高" style="width: 80%;"></td>
+		                </tr>
+		                <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">统一信用代码</label><span style="color: red;">*</span></td> 
+			                  <td><input  class="form-control" th:value="${company.uscc}" value="123" style="width: 80%;"></td>
+		                </tr>
+		                 <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">地址</label><span style="color: red;">*</span></td> 
+			                  <td><input  class="form-control" th:value="${company.address}" value="准格尔市" style="width: 80%;"></td>
+		                </tr>
+		                 <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">企业性质码</label><span style="color: red;">*</span></td>
+			                  <td><input  class="form-control" th:value="${company.nature}" value="1" style="width: 80%;"></td>
+		                </tr>
+		                 <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">法人代表姓名</label><span style="color: red;">*</span></td>
+			                  <td><input  class="form-control" th:value="${company.legal}" value="王五" style="width: 80%;"></td>
+		                </tr>
+		                 <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">电话号码</label><span style="color: red;">*</span></td> 
+			                  <td><input  class="form-control" th:value="${company.phone}" value="11111111" style="width: 80%;"></td>
+		                </tr>
+		                 <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">传真号码</label><span style="color: red;">*</span></td> 
+			                  <td><input  class="form-control" th:value="${company.fax}" value="1111" style="width: 80%;"></td>
+		                </tr>
+		                 <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">电邮</label><span style="color: red;">*</span></td> 
+			                  <td><input  class="form-control" th:value="${company.mail}" value="1111" style="width: 80%;"></td>
+		                </tr>
+		                 <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">生产许可</label><span style="color: red;">*</span></td> 
+			                  <td><input  class="form-control" th:value="${company.productionPermit}" value="1111" style="width: 80%;"></td>
+		                </tr>
+		                 <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">企业人数</label><span style="color: red;">*</span></td> 
+			                  <td><input  class="form-control" th:value="${company.number}" value="4" style="width: 80%;"></td>
+		                </tr>
+		                 <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">企业简介</label><span style="color: red;">*</span></td> 
+			                  <td><textarea style="width:80%;height: 60px;" th:text="${company.produce}"></textarea></td>
+		                </tr>
+		                 <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">企业类别</label><span style="color: red;">*</span></td> 
+			                  <td><input  class="form-control" th:value="${company.type}" value="准格尔安监局" style="width: 80%;"></td>
+		                </tr>
+		                 <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">安监部门</label><span style="color: red;">*</span></td> 
+			                  <td>
+			                  	<select class="form-control select2" style="width: 80%;">
+							                  <option selected="selected" th:text="${company.sname}">准格尔安监局</option>
+				               		</select>
+			                  </td>
+		                </tr>
+		                 <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">所属区域</label><span style="color: red;">*</span></td> 
+			                  <td>
+			                  	<select class="form-control select2" style="width: 80%;">
+							                  <option selected="selected" th:text="${company.aname}">大路工业园区</option>
+				               		</select>
+			                  </td>
+		                </tr>
+              </table>
+            </div>
+            <!-- /.box-body -->
+         </div>
+    </section>
+  </div>
+    <!-- /.content -->
+</div>
+  <!-- /.content-wrapper -->
+
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 3 -->
+<script th:src="@{/bower_components/jquery/dist/jquery.min.js}" ></script>
+<!-- Bootstrap 3.3.7 -->
+<script th:src="@{/bower_components/bootstrap/dist/js/bootstrap.min.js}" ></script>
+<!-- AdminLTE App -->
+<script th:src="@{/dist/js/adminlte.min.js}" ></script>
+<!--图表-->
+	<script th:src="@{/Tujs/corechart.js}" ></script>
+	<script th:src="@{/Tujs/jquery-1.10.2.min.js}" ></script>
+	<script th:src="@{/Tujs/jquery.gvChart-1.0.1.min.js}" ></script>
+	<script th:src="@{/Tujs/jsapi.js}"></script>
+	<script th:src="@{/Tujs/tu.js}" ></script>
+</body>
+</html>

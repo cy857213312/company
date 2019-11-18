@@ -17,6 +17,13 @@
   <sql id="Base_Column_List">
     id, sd_id, type, name, method, kind, gs_id, gsr_id, condition, score, create_time
   </sql>
+  <select id="getChecks" resultType="com.imufe.company.entity.SecurityCheck">
+    select s.name As sname,c.* from `check` c left join security_department s on c.sd_id=s.id
+  </select>
+  <select id="selectChecks" resultType="com.imufe.company.entity.Check">
+    select *
+    from `check`
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -27,22 +34,16 @@
     delete from check
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.imufe.company.entity.Check">
-    insert into check (id, sd_id, type, 
-      name, method, kind, 
-      gs_id, gsr_id, condition, 
-      score, create_time)
-    values (#{id,jdbcType=INTEGER}, #{sdId,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, 
-      #{name,jdbcType=VARCHAR}, #{method,jdbcType=VARCHAR}, #{kind,jdbcType=VARCHAR}, 
-      #{gsId,jdbcType=INTEGER}, #{gsrId,jdbcType=INTEGER}, #{condition,jdbcType=VARCHAR}, 
-      #{score,jdbcType=INTEGER}, #{createTime,jdbcType=DATE})
+  <insert id="insert">
+INSERT INTO `check` ( `sd_id`, `type`, `name`, `method`, `kind`, `gs_id`, `gsr_id`, `condition`, `score`, `create_time`)
+ VALUES ( #{sdId},  #{type},  #{name}, #{method},  #{kind},  #{gsId},  #{gsrId}, #{condition},  #{score},#{createTime});
   </insert>
   <insert id="insertSelective" parameterType="com.imufe.company.entity.Check">
     insert into check
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
-      </if>
+      </if>.00
       <if test="sdId != null">
         sd_id,
       </if>

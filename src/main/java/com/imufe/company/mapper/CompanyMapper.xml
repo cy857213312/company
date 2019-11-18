@@ -31,8 +31,17 @@
     produce, type, security_department_id, area_id, main_person, middle_person, safety_person, 
     technology_person, work_person, handle_person, key_technolo, major_hazard
   </sql>
+  <select id="selectByCompanyName" resultType="com.imufe.company.entity.Company">
+    select longitude,latitude
+    from company
+    where name=#{companyName}
+  </select>
+  <select id="allMessage" resultType="com.imufe.company.entity.message">
+    select s.name As sname,a.name As aname,c.* from company c left join security_department s on c.security_department_id=s.id
+    left join area a on c.area_id=a.id
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from company
     where id = #{id,jdbcType=INTEGER}

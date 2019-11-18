@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="gov/public :: #public_head">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <!--主标题 -->
+    <header class="main-header" th:replace="gov/public :: #public_header">
+    </header>
+    <!-- 左列。包含徽标和边栏-->
+    <aside class="main-sidebar" th:replace="gov/public :: #public_aside">
+    </aside>
+
+  <!-- 内容包装器。包含页面内容 -->
+  <div class="content-wrapper">
+
+    <!-- 主要内容 -->
+    <section class="content container-fluid">
+			<!--你的内容-->
+    <div id="con6">
+			<table id='oldday'>
+				<caption>安全生产监督检查信息趋势图</caption>
+				<thead>
+					<tr >
+						<th></th>
+						<th th:each="t :${point}" th:text="${#dates.format(t.createTime,'yyyy-MM-dd')}">2016-05-15</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-----------监管检查------------>
+					<tr >
+						<th>监督检查数据</th>
+						<td  th:each="s :${point}" th:text="${s.score}">10</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+			<div style="width: 1100px;height: 350px;">
+			<div style="width:500px;height: 350px;float: left;">
+				<table id='todayin'>
+					<caption>各类隐患占比图</caption>
+					<thead>
+						<tr>
+							<th></th>
+							<th>符合项</th>
+							<th>一般隐患</th>
+							<th>重大隐患</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th >100</th>
+							<td >65</td>
+							<td>32</td>
+							<td>3</td>
+						</tr>
+					</tbody>
+				</table>  
+			</div>
+			<div style="width:500px;height: 300px;background-color:#D8E9FD;float: left;margin-top: 30px;border-radius:40px;line-height:250px;text-align: center;font-size: large;margin-left: 60px;">
+					<a class="chakan" style="color: coral;font-weight: 600;" href="#" >情况说明</a>
+			</div>
+		</div>
+
+    </section>
+    <!-- /.content -->
+   
+  <!-- /.content-wrapper -->
+
+  <!-- 主要的页脚 -->
+
+
+<!--点击情况说明后弹出的页面-->
+<div class="zhezhao"></div>
+    <input type="hidden" name="_method" value="chakan">
+    <div class="remove" id="removeProv">
+       <div class="removerChid">
+           <h2>隐患信息</h2>
+           <div class="message" >
+           	<table>
+				<tr><td><span>编号</span></td></tr>
+				<tr><td><input>1</input></td></tr>
+				<tr><td><span>内容</span></td></tr>
+				<tr><td><textarea>qqq</textarea></td></tr>
+				<tr><td><span>依据</span></td></tr>
+				<tr><td><textarea>qq</textarea></td></tr>
+				<tr><td><span>现场情况</span></td></tr>
+				<tr><td><textarea>qq</textarea></td></tr>
+			</table>
+            <div class="removeMain" >
+              	<a href="#" id="yes">确定</a>
+          	</div>
+           </div>
+       </div>
+    </div>
+  </div>
+</div>
+<!-- REQUIRED JS SCRIPTS -->
+<!-- jQuery 3 -->
+<script th:src="@{/bower_components/jquery/dist/jquery.min.js}" ></script>
+<!-- Bootstrap 3.3.7 -->
+<script th:src="@{/bower_components/bootstrap/dist/js/bootstrap.min.js}" ></script>
+<!-- AdminLTE App -->
+<script th:src="@{/dist/js/adminlte.min.js}" ></script>
+<!--图表-->
+<script th:src="@{/Tujs/corechart.js}" ></script>
+<script th:src="@{/Tujs/jquery-1.10.2.min.js}" ></script>
+<script th:src="@{/Tujs/jquery.gvChart-1.0.1.min.js}" ></script>
+<script th:src="@{/Tujs/jsapi.js}"></script>
+<script th:src="@{/Tujs/tu.js}" ></script>
+</body>
+</html>

@@ -6,6 +6,10 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CompanyMapper {
+    Company selectByCompanyName(String companyName);
+    //企业信息
+    Company allMessage();
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(Company record);

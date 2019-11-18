@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="gov/public :: #public_head">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <!--主标题 -->
+  <header class="main-header" th:replace="gov/public :: #public_header">
+  </header>
+  <!-- 左列。包含徽标和边栏-->
+  <aside class="main-sidebar" th:replace="gov/public :: #public_aside">
+  </aside>
+
+  <!-- 内容包装器。包含页面内容 -->
+  <div class="content-wrapper">
+    <!-- 主要内容 -->
+    <section class="content container-fluid">
+			<!--你的内容-->
+     <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">检查基本信息</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" id="addform" th:action="@{/add}" th:method="post">
+              <div class="box-body">
+                <div class="form-group">
+                  <label >检查部门</label>
+                  <input  name="sname" class="form-control" th:value="${checksname}">
+                </div>
+                <div class="form-group">
+                  <label>检查类型</label>
+               			 <select name="id" class="form-control select2" style="width: 100%;">
+                           <option selected="selected">--请选择--</option>
+			                  <option value=""  th:each="p : ${checks}"  th:value="${p.id}" th:text="${p.method}">例行检查</option>
+               				</select>
+                </div>
+                <div class="form-group">
+                  <label>检查人</label>
+                  <input name="name" class="form-control" >
+                </div>
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary" onclick="$(#'addform').submit();">开始录入</button>
+              </div>
+            </form>
+          </div>
+    </section>
+  </div>
+    <!-- /.content -->
+   
+  <!-- /.content-wrapper -->
+</div>
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 3 -->
+<script th:src="@{/bower_components/jquery/dist/jquery.min.js}" ></script>
+<!-- Bootstrap 3.3.7 -->
+<script th:src="@{/bower_components/bootstrap/dist/js/bootstrap.min.js}" ></script>
+<!-- AdminLTE App -->
+<script th:src="@{/dist/js/adminlte.min.js}" ></script>
+<!--图表-->
+<script th:src="@{/Tujs/corechart.js}" ></script>
+<script th:src="@{/Tujs/jquery-1.10.2.min.js}" ></script>
+<script th:src="@{/Tujs/jquery.gvChart-1.0.1.min.js}" ></script>
+<script th:src="@{/Tujs/jsapi.js}"></script>
+<script th:src="@{/Tujs/tu.js}" ></script>
+</body>
+</html>

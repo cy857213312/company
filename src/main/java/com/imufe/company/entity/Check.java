@@ -30,5 +30,4 @@ public class Check {
 
     private Date createTime;
 
-
 }

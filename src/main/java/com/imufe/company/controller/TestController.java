@@ -4,12 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/admin")
 public class TestController {
 
-    @RequestMapping("/login")
+    @RequestMapping("/ccc")
     public String index(){
-        return "admin/index";
+        return "gov/reg/check";
     }
 
 

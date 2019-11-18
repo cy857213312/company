@@ -52,5 +52,10 @@ public class Company {
 
     private String majorHazard;
 
+    private Float longitude;
+
+    private Float latitude;
+
+
 
 }

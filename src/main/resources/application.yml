@@ -12,6 +12,18 @@ spring:
     numTestsPerEvictionRun: 50
       #连接池中连接，在时间段内一直空闲，被逐出连接池的时间(1000*60*60)，以毫秒为单位
     minEvictableIdleTimeMillis: 3600000
+      #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall,logback
+    maxPoolPreparedStatementPerConnectionSize: 25
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+    #thymeleaf
+  thymeleaf:
+    prefix: classpath:/templates/
+    cache: false
+    #信息国际化
+  messages:
+    basename: i18n.login
 server:
   # 服务http端口
   port: 8080

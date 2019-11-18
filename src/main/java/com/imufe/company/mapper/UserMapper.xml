@@ -10,6 +10,10 @@
   <sql id="Base_Column_List">
     id, account, password, type
   </sql>
+  <select id="getUserByAccount" resultType="com.imufe.company.entity.User">
+        select * from user where upper (account)=upper (#{account})
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

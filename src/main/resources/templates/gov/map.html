@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>危险化学品风险预测系统</title>
+  <!--告诉浏览器响应屏幕宽度-->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" th:href="@{/jqcss/bootstrap.min.css}" >
+  <!-- Font Awesome -->
+  <link rel="stylesheet"th:href="@{/jqcss/font-awesome/css/font-awesome.min.css}" >
+  <!-- Ionicons -->
+  <link rel="stylesheet" th:href="@{/jqcss/Ionicons/css/ionicons.min.css}" >
+  <!-- Theme style -->
+  <link rel="stylesheet" th:href="@{/jqcss/AdminLTE.min.css}">
+  <link rel="stylesheet" th:href="@{/jqcss/skin-blue.min.css}">
+  <!--百度地图-->
+  <style type="text/css">
+    #baiduMap {width:1800px;height: 800px;overflow: hidden;margin:0;font-family:"微软雅黑";}
+  </style>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=G2S0tLsaEZ1ywGTNruMxX50ar3PIcpVd"></script>
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!--主标题 -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!--迷你侧边标志 50x50 pixels -->
+      <span class="logo-mini"><b>用户</b>[[${session.loginUser.account}]]</span>
+      <!-- 常规状态和移动设备的徽标 -->
+      <span class="logo-lg"><b>用户：</b>[[${session.loginUser.account}]]</span>
+    </a>
+
+    <!-- 头部导航 -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- 侧边栏切换按钮-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">切换导航</span>
+      </a>
+      <!-- 导航菜单 -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!--信息:样式可以在dropdown.less中找到 -->
+
+          <!-- 用户帐户菜单 -->
+          <li class="dropdown user user-menu">
+            <!-- 菜单切换按钮 -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- 导航栏中的用户图像-->
+              <img th:src="@{/img/user2-160x160.jpg}"  class="user-image" alt="User Image">
+              <!-- hidden-xs在小型设备上隐藏用户名，因此只显示图像 -->
+              <span class="hidden-xs">[[${session.loginUser.account}]]</span>
+            </a>
+
+            <ul class="dropdown-menu">
+              <!-- 菜单中的用户图像 -->
+              <li class="user-header">
+                <img th:src="@{/img/user2-160x160.jpg}" class="img-circle" alt="User Image">
+                <p>
+                  [[${session.loginUser.account}]]
+                  <small>欢迎</small>
+                </p>
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">详细</a>
+                </div>
+                <div class="pull-right">
+                  <a th:href="@{/logout}" class="btn btn-default btn-flat">退出</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- 左列。包含徽标和边栏-->
+  <aside class="main-sidebar">
+
+    <!-- 侧栏:style可以在sidebar.less中找到 -->
+    <section class="sidebar">
+
+      <!-- 侧边用户面板(可选) -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img th:src="@{/img/user2-160x160.jpg}" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>[[${session.loginUser.account}]]</p>
+          <!-- 状态 -->
+          <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+        </div>
+      </div>
+
+      <!-- 搜索表单(可选) -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+              </button>
+            </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+
+      <!-- 侧边栏菜单 -->
+      <ul class="sidebar-menu" data-widget="tree" >
+        <li class="header">导航栏</li>
+        <!-- 还可以向链接添加图标-->
+        <!--<li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>-->
+        <li class="treeview" >
+          <a href="#"><i class="fa fa-link"></i>
+            <span th:text="${session.poss.get(0).areaName}" ></span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+<!--            <li><a  onclick="tz()" th:href="@{/login/{companyName}(companyName=${session.poss.get(0).companyName})}"  href="#" th:text="${session.poss.get(0).companyName}" ></a></li>-->
+            <li><a  onclick="tz()" href="#" th:text="${session.poss.get(0).companyName}" ></a></li>
+          </ul>
+      </ul>
+        </li>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- 内容包装器。包含页面内容 -->
+  <div class="content-wrapper">
+    <!-- 内容页眉(页眉) -->
+    <section class="content-header">
+      <h1>
+        企业定位
+        <small>可通过百度地图查询公司地点</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 区域</a></li>
+        <li class="active">企业</li>
+      </ol>
+    </section>
+
+    <!-- 主要内容 -->
+    <section class="content container-fluid">
+      <!--你的内容-->
+      <div id="baiduMap"></div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <script type="text/javascript" th:inline="javascript">
+    var map = new BMap.Map("baiduMap",{minZoom:4,maxZoom:10});  //创建Map实例
+    map.centerAndZoom(new BMap.Point(111.747175,40.84835),10);
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+    function tz(){
+      var map = new BMap.Map("baiduMap");  //创建Map实例
+      var lon=[[${session.longitude}]];
+      var lat=[[${session.latitude}]];
+      var point = new BMap.Point(lon,lat);  //创建Point位置实例
+      map.centerAndZoom(point, 19);  //设置地图中心点及缩放级别
+      map.addControl(new BMap.MapTypeControl());  //添加地图类型控件
+      var marker = new BMap.Marker(point);  //创建一个Marker点
+      marker.addEventListener("click",attribute);//添加点击事件
+      map.addOverlay(marker);  //将Marker点覆盖到地图上
+      marker.setAnimation(BMAP_ANIMATION_BOUNCE);  //使Marker点跳动起来
+      map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+      function attribute(){
+        window.location.href="/into"; }
+    }
+  </script>
+  <!-- 主要的页脚 -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <!-- Default to the left -->
+    <strong>欢迎使用危险化学品风险预测系统 </strong>
+  </footer>
+
+
+  <!-- REQUIRED JS SCRIPTS -->
+</div>
+<!-- jQuery 3 -->
+<script  th:src="@{/jqjs/jquery.min.js}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script th:src="@{/jqjs/bootstrap.min.js}"></script>
+<!-- AdminLTE App -->
+<script th:src="@{/jqjs/adminlte.min.js}"></script>
+
+<!--您还可以添加Slimscroll和FastClick插件推荐使用这两个插件来增强用户体验。  -->
+</body>
+</html>

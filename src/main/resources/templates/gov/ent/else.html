@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="gov/public :: #public_head">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <!--主标题 -->
+  <header class="main-header" th:replace="gov/public :: #public_header">
+  </header>
+  <!-- 左列。包含徽标和边栏-->
+  <aside class="main-sidebar" th:replace="gov/public :: #public_aside">
+  </aside>
+
+  <!-- 内容包装器。包含页面内容 -->
+  <div class="content-wrapper">
+  	<section class="content-header">
+        <a th:href="@{/basic}"><button  type="button" class="btn btn-block btn-outline-secondary" style="width: 200px;height: 40px;margin-right: 10px; float: left;">基本信息</button></a>
+        <a th:href="@{/person}" ><button type="button" class="btn btn-block btn-outline-secondary" style="width: 200px;height: 40px;margin-right: 10px; float: left;" >人员信息</button></a>
+        <a th:href="@{/else}" > <button type="button" class="btn btn-block btn-outline-secondary"style="width: 200px;height: 40px;background-color: #E2ECF5;" >其它信息</button></a>
+  	</section>
+    <!-- 主要内容 -->
+    <section class="content container-fluid">
+			<!--你的内容-->
+  		<div class="box">
+            <div class="box-header">
+              <h3 class="box-title">其它信息</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table class="table table-condensed" >
+		                <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">重点监管技术</label><span style="color: red;">*</span></td> 
+			                  <td><input  class="form-control" th:value="${company.keyTechnolo}" value="2" style="width: 80%;"></td>
+		                </tr>
+		                <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">重大危险源</label><span style="color: red;">*</span></td> 
+			                  <td><input  class="form-control" th:value="${company.majorHazard}" value="32" style="width: 80%;"></td>
+		                </tr>             
+              </table>
+            </div>
+            <!-- /.box-body -->
+         </div>
+    </section>
+  </div>
+    <!-- /.content -->
+</div>
+  <!-- /.content-wrapper -->
+
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 3 -->
+<script th:src="@{/bower_components/jquery/dist/jquery.min.js}" ></script>
+<!-- Bootstrap 3.3.7 -->
+<script th:src="@{/bower_components/bootstrap/dist/js/bootstrap.min.js}" ></script>
+<!-- AdminLTE App -->
+<script th:src="@{/dist/js/adminlte.min.js}" ></script>
+<!--图表-->
+<script th:src="@{/Tujs/corechart.js}" ></script>
+<script th:src="@{/Tujs/jquery-1.10.2.min.js}" ></script>
+<script th:src="@{/Tujs/jquery.gvChart-1.0.1.min.js}" ></script>
+<script th:src="@{/Tujs/jsapi.js}"></script>
+<script th:src="@{/Tujs/tu.js}" ></script>
+</body>
+</html>

@@ -9,6 +9,10 @@
   <sql id="Base_Column_List">
     id, name, description
   </sql>
+  <select id="getPoss" resultType="com.imufe.company.entity.Pos">
+        select a.name AS areaName,c.name AS companyName
+        from area a left join company c on a.id=c.area_id
+    </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
