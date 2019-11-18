@@ -1,4 +1,4 @@
-package com.imufe.company.config;
+package com.imufe.company.common.config;
 
 import org.mybatis.spring.boot.autoconfigure.ConfigurationCustomizer;
 import org.springframework.context.annotation.Bean;

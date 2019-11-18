@@ -1,5 +1,10 @@
 package com.imufe.company.entity;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 public class GraSubsidiaryRules {
     private Integer id;
 

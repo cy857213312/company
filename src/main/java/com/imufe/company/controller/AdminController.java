@@ -18,6 +18,7 @@ public class AdminController {
 
 
 
+
     @PostMapping("/adminRegister")
     public String adminRegister(@RequestBody Admin admin){
 

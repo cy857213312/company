@@ -1,5 +1,6 @@
 package com.imufe.company.service.Impl;
 
+import com.imufe.company.entity.GraSubsidiary;
 import com.imufe.company.entity.Grademanage;
 import com.imufe.company.mapper.GrademanageMapper;
 import com.imufe.company.service.GrademanageService;
@@ -19,5 +20,6 @@ public class GrademanageServiceImpl implements GrademanageService {
     public List<Grademanage> selectAllGrade() {
         return grademanageMapper.selectAllGrade();
     }
+
 
 }

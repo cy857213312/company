@@ -1,4 +1,4 @@
-package com.imufe.company.interceptor;
+package com.imufe.company.common.interceptor;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 

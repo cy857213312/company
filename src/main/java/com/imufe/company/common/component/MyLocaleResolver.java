@@ -1,4 +1,4 @@
-package com.imufe.company.component;
+package com.imufe.company.common.component;
 
 import org.springframework.web.servlet.LocaleResolver;
 import org.thymeleaf.util.StringUtils;
