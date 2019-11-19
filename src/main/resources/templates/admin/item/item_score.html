@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/public :: #public_head">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <header class="main-header" th:replace="admin/public :: #public_header">
+    </header>
+    <!-- 左列。包含徽标和边栏-->
+    <aside class="main-sidebar" th:replace="admin/public :: #public_aside">
+    </aside>
+  <!-- 内容包装器。包含页面内容 -->
+  <div class="content-wrapper">
+
+    <!-- 主要内容 -->
+       <div class="box">
+            <div class="box-body">
+             <table class="table table-bordered">
+                <tr style="background: #C4E2FF">
+                  <th style="border: 0px;">单元编号</th>
+                  <th style="border: 0px;">单元名称</th>
+                  <th style="border: 0px;">分数</th>
+                  <th style="border: 0px;">权重</th>
+                </tr>
+                <tr>
+                  <td>七</td>
+                  <td>隐患排查与风险管理</td>
+                  <td>
+                  	<table>
+                        <tr>
+                            <td rowspan="2" >
+                                <input  type="text" value="100" id="txtNumber" style="height:50px;width:180px; text-align:center;font-size:xx-large; vertical-align:middle; color:#7d2974;" />
+                            </td>
+                            <td>
+                                <input type="button" value="▲" id="up" onclick="addOne()"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <input id="down" type="button" onclick="removeOne()" value="▼" />
+                            </td>
+                        </tr>
+                    </table>
+                  </td>
+                  <td>
+                  	<table>
+                        <tr>
+                            <td rowspan="2" >
+                                <input  type="text" value="1" id="txtNumber1" style="height:50px;width:180px; text-align:center;font-size:xx-large; vertical-align:middle; color:#7d2974;" />
+                            </td>
+                            <td>
+                                <input type="button" value="▲" id="up1" onclick="addOne()"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <input id="down1" type="button" onclick="removeOne()" value="▼" />
+                            </td>
+                        </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                	<td></td>
+                </tr>
+                <tr>
+                	<th style="background: #C4E2FF">总分 </th>
+                	<td>100</td>
+                	<td><input type="button" value="修改" style="width: 120px;height: 30px;background:#0066CC;border-radius: 10px;color: white;" /></td>
+                </tr>
+                <tr>
+                		
+                </tr>
+              </table>
+            </div>
+            <!-- /.box-body -->
+       </div>
+
+  </div>
+    <!-- /.content -->
+</div>
+  <!-- /.content-wrapper -->
+
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 3 -->
+<script th:src="@{/jqjs/jquery.min.js}" ></script>
+<!-- Bootstrap 3.3.7 -->
+<script th:src="@{/jqjs/bootstrap.min.js}" ></script>
+<!-- AdminLTE App -->
+<script th:src="@{/jqjs/adminlte.min.js}"></script>
+
+</body>
+</html>

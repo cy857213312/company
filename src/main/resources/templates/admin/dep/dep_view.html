@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/public :: #public_head">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <header class="main-header" th:replace="admin/public :: #public_header">
+  </header>
+  <!-- 左列。包含徽标和边栏-->
+  <aside class="main-sidebar" th:replace="admin/public :: #public_aside">
+  </aside>
+  <div class="content-wrapper">
+    <!-- Main content -->
+     <section class="content container-fluid">
+			<!--你的内容-->
+  		<div class="box">
+            
+            <div class="box-body">
+              <table class="table table-condensed" style="border-collapse:collapse;border-spacing:0;" >
+		                <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">部门名称</label><span style="color: red;">*</span></td> 
+			                  <td><input  class="form-control" value="易高" style="width: 80%;"></td>
+		                </tr>
+		                <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">部门描述</label><span style="color: red;">*</span></td> 
+			                  <td><input  class="form-control" value="123" style="width: 80%;"></td>
+		                </tr>
+		                 
+              </table>
+              <div align="center">
+              	<input type="button" value="提交" style="width: 120px;height: 30px;background:#0066CC;border-radius: 10px;color: white;" />
+              	<input type="button" value="返回" style="width: 120px;height: 30px;background:#0066CC;border-radius: 10px;color: white;" />
+              </div>
+            </div>
+            <!-- /.box-body -->
+         </div>
+    </section>
+    <!-- /.content -->
+  </div>
+
+
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script th:src="@{/jqjs/jquery.min.js}" ></script>
+<!-- Bootstrap 3.3.7 -->
+<script th:src="@{/jqjs/bootstrap.min.js}" ></script>
+<!-- DataTables -->
+<script th:src="@{/jqjs/jquery.dataTables.min.js}" ></script>
+<script th:src="@{/jqjs/dataTables.bootstrap.min.js}" ></script>
+<!-- SlimScroll -->
+<script th:src="@{/jqjs/jquery.slimscroll.min.js}" ></script>
+<!-- FastClick -->
+<script th:src="@{/jqjs/fastclick.js}" ></script>
+<!-- AdminLTE App -->
+<script th:src="@{/jqjs/adminlte.min.js}"></script>
+<!-- AdminLTE for demo purposes -->
+<script th:src="@{/jqjs/demo.js}" ></script>
+<!-- page script -->
+<script>
+    $(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : false,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false
+        })
+    })
+</script>
+</body>
+</html>

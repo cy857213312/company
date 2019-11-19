@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>危险化学品风险预测系统</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="../../css/tj.css">
+
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+   <header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!--迷你侧边标志 50x50 pixels -->
+      <span class="logo-mini"><b>用户</b>王五</span>
+      <!-- 常规状态和移动设备的徽标 -->
+      <span class="logo-lg"><b>用户：</b>王五</span>
+    </a>
+
+    <!-- 头部导航 -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- 侧边栏切换按钮-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">切换导航</span>
+      </a>
+      <!-- 导航菜单 -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!--信息:样式可以在dropdown.less中找到 -->
+
+          <!-- 用户帐户菜单 -->
+          <li class="dropdown user user-menu">
+            <!-- 菜单切换按钮 -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- 导航栏中的用户图像-->
+              <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <!-- hidden-xs在小型设备上隐藏用户名，因此只显示图像 -->
+              <span class="hidden-xs">用户名</span>
+            </a>
+            
+            <ul class="dropdown-menu">
+              <!-- 菜单中的用户图像 -->
+              <li class="user-header">
+                <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <p>
+              			    用户名
+      	            <small>欢迎</small>
+                </p>
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">详细</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">退出</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- 左列。包含徽标和边栏-->
+  <aside class="main-sidebar">
+
+    <!-- 侧栏:style可以在sidebar.less中找到 -->
+    <section class="sidebar">
+
+      <!-- 侧边用户面板(可选) -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>用户名</p>
+          <!-- 状态 -->
+          <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+        </div>
+      </div>
+
+      <!-- 搜索表单(可选) -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+              </button>
+            </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+
+      <!-- 侧边栏菜单 -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">导航栏</li>
+        <!-- 还可以向链接添加图标-->
+        <!--<li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>-->
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>评分信息管理</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a  href="pinggu.html">条目管理</a></li>
+          </ul>
+           <a href="#"><i class="fa fa-link"></i> <span>企业信息管理</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a  href="#">企业管理</a></li>
+          </ul>
+           <a href="#"><i class="fa fa-link"></i> <span>区划管理</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a  href="#">工业区管理</a></li>
+          </ul>
+   				 <a href="#"><i class="fa fa-link"></i> <span>安监部门管理</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a  href="#">部门管理</a></li>
+          </ul>
+           <a href="#"><i class="fa fa-link"></i> <span>用户管理</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a  href="#">监管用户</a></li>
+            <li><a  href="#">企业用户</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+  <div class="content-wrapper">
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+	                <tr>
+	                  <th>编号</th>
+	                  <th>用户名</th>
+	                  <th>操作</th>
+	                </tr>
+                </thead>
+                <tbody>
+	                <tr>
+	                  <td>1</td>
+	                  <td>易高</td>
+	              	  <td><a>备份</a></td>
+	                </tr> 
+               	</tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+          
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+
+
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+</script>
+</body>
+</html>

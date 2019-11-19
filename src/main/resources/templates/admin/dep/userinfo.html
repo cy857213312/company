@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/public :: #public_head">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <header class="main-header" th:replace="admin/public :: #public_header">
+  </header>
+  <!-- 左列。包含徽标和边栏-->
+  <aside class="main-sidebar" th:replace="admin/public :: #public_aside">
+  </aside>
+  <!-- 内容包装器。包含页面内容 -->
+  <div class="content-wrapper">
+
+    <!-- 主要内容 -->
+    <section class="content container-fluid">
+			<!--你的内容-->
+  		<div class="box">
+            <div class="box-header">
+              <h3 class="box-title">用户信息</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table class="table table-condensed" >
+		                <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">用户名</label><span style="color: red;">*</span></td> 
+			                  <td><input  class="form-control" value="2" style="width: 80%;"></td>
+		                </tr>
+		                <tr>                
+			                  <td style="text-align: right;"><label style="margin-top: 7px;">密码</label><span style="color: red;">*</span></td> 
+			                  <td><input  class="form-control" value="32" style="width: 80%;"></td>
+		                </tr>             
+              </table>
+              <div align="center">
+              	<input type="button" value="提交" style="width: 120px;height: 30px;background:#0066CC;border-radius: 10px;color: white;" />
+              	<input type="button" value="返回" style="width: 120px;height: 30px;background:#0066CC;border-radius: 10px;color: white;" />
+              </div>
+            </div>
+            <!-- /.box-body -->
+         </div>
+    </section>
+  </div>
+    <!-- /.content -->
+</div>
+  <!-- /.content-wrapper -->
+
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 3 -->
+<script th:src="@{/jqjs/jquery.min.js}" ></script>
+<!-- Bootstrap 3.3.7 -->
+<script th:src="@{/jqjs/bootstrap.min.js}" ></script>
+<!-- AdminLTE App -->
+<script th:src="@{/jqjs/adminlte.min.js}"></script>
+</body>
+</html>
