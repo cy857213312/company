@@ -7,6 +7,8 @@ import com.imufe.company.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+
 
 @RestController
 @RequestMapping("/AdminController")
@@ -26,11 +28,13 @@ public class AdminController {
             return "success";
         }else {
             return "false";
+
         }
 
     }
 
     @PostMapping("/adminLogin")
+    @CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
     public Admin adminLogin(@RequestBody Admin admin){
         return adminService.adminLogin(admin);
     }
