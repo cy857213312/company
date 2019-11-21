@@ -29,4 +29,8 @@ public interface AreaMapper {
     @Select("select a.name AS areaName,c.name AS companyName\n" +
             "from area a left join company c on a.id=c.area_id")
     List<PosDto> selcetPos();
+
+    @Select("SELECT *\n" +
+            "FROM area \n")
+    List<Area> selectAllArea();
 }
