@@ -8,6 +8,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import sun.rmi.server.InactiveGroupException;
 
 import java.util.List;
 
@@ -23,5 +24,23 @@ public class GraSubsidiaryRulesController {
     @GetMapping("/selectAllGraSubsidiaryRules")
     public List<GraSubsidiaryRules> selectAllGraSubsidiaryRules(@RequestParam("graSuId") Integer graSuId){
         return graSubsidiaryRulesService.selectAllGraSubsidiaryRules(graSuId);
+    }
+
+    @ApiOperation(value = "查看单个单元明细条例")
+    @GetMapping("/selectSingleGraSubRules")
+    public GraSubsidiaryRules selectSingleGraSubRules(@RequestParam("id") Integer id){
+        return graSubsidiaryRulesService.selectSingleGraSubRules(id);
+    }
+
+    @ApiOperation(value = "增加单元明细条例")
+    @PostMapping("/insertGraSubRules")
+    public String insertGraSubRules(@RequestBody GraSubsidiaryRules graSubsidiaryRules){
+        return graSubsidiaryRulesService.insertGraSubRules(graSubsidiaryRules);
+    }
+
+    @ApiOperation(value = "更新单元明细条例")
+    @PostMapping("/updateGraSubRules")
+    public String updateGraSubRules(@RequestBody GraSubsidiaryRules graSubsidiaryRules){
+        return graSubsidiaryRulesService.updateGraSubRules(graSubsidiaryRules);
     }
 }

@@ -1,7 +1,10 @@
 package com.imufe.company.mapper;
 
 import com.imufe.company.entity.Company;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 
 @Repository
@@ -21,4 +24,8 @@ public interface CompanyMapper {
     int updateByPrimaryKeySelective(Company record);
 
     int updateByPrimaryKey(Company record);
+
+    @Select("SELECT *\n" +
+            "FROM company c")
+    List<Company> selectAllCompany();
 }
