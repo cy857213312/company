@@ -14,5 +14,7 @@ public class User {
 
     private Integer type;
 
+    private Integer tId;
+
 
 }
