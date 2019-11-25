@@ -8,7 +8,7 @@ public class TestController {
 
     @RequestMapping("/ccc")
     public String index(){
-        return "gov/reg/check";
+        return "admin/item/item";
     }
 
     @RequestMapping("/adminLogin")
