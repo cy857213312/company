@@ -19,24 +19,28 @@ public class GraSubsidiaryController {
 
     @ApiOperation(value = "增加单元明细")
     @PostMapping("/insertGraSubsidiary")
+    @CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
     public boolean insertGraSubsidiary(@RequestBody  GraSubsidiary graSubsidiary){
         return graSubsidiaryService.insertGraSubsidiary(graSubsidiary);
     }
 
     @ApiOperation(value = "查询该公司所有单元明细")
     @GetMapping("/selectAllGraSubsidiary")
+    @CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
     public List<GraSubsidiary> selectAllGraSubsidiary(@RequestParam("gId") Integer gId){
         return graSubsidiaryService.selectAllGraSubsidiary(gId);
     }
 
     @ApiOperation(value = "查询单个单元明细")
     @GetMapping("/selectByPrimaryKey")
+    @CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
     public GraSubsidiary selectByPrimaryKey(@RequestParam("id") Integer id){
         return graSubsidiaryService.selectByPrimaryKey(id);
     }
 
     @ApiOperation(value = "更新单个单元明细")
     @PostMapping("/updateByPrimaryKeySelective")
+    @CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
     public Boolean updateByPrimaryKeySelective(@RequestBody GraSubsidiary graSubsidiary){
         return graSubsidiaryService.updateByPrimaryKeySelective(graSubsidiary);
     }
