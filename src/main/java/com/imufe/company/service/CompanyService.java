@@ -1,5 +1,6 @@
 package com.imufe.company.service;
 
+import com.imufe.company.dto.CompanyDto;
 import com.imufe.company.entity.Company;
 import io.swagger.models.auth.In;
 
@@ -16,4 +17,8 @@ public interface CompanyService {
     String updateCompany(Company company);
 
     Company selectSingleCompany(Integer id);
+
+    CompanyDto selectCompanyDto(Integer id);
+
+
 }

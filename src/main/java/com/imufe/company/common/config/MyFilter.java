@@ -8,8 +8,8 @@ import java.io.IOException;
 
 /**
  * 设置跨域请求相关参数的过滤器
- * @Author LQY
- * @Date 2018/12/3
+ * @Author Cy
+ * @Date 2019/11/24
  */
 @WebFilter("/*")
 public class MyFilter implements Filter {
@@ -32,6 +32,10 @@ public class MyFilter implements Filter {
         resp.setHeader("Access-Control-Allow-Origin","*");
         //设置支持那种访问方法
         resp.setHeader("Access-Control-Allow-Methods","POST,GET,OPTIONS,DELETE");
+        resp.setHeader("Access-Control-Max-Age", "36000");
+        resp.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,Authorization,authorization");
+        resp.setHeader("Access-Control-Allow-Credentials","true");
+
         chain.doFilter(request,response);
     }
 }

@@ -1,5 +1,6 @@
 package com.imufe.company.mapper;
 
+import com.imufe.company.dto.CompanyDto;
 import com.imufe.company.entity.Company;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -28,4 +29,9 @@ public interface CompanyMapper {
     @Select("SELECT *\n" +
             "FROM company c")
     List<Company> selectAllCompany();
+
+    @Select("SELECT *\n" +
+            "FROM company c\n" +
+            "WHERE c.id=#{id}")
+    CompanyDto selectCompanyDto(Integer id);
 }
