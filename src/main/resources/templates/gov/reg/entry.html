@@ -26,64 +26,69 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table class="table table-condensed">
-                <tr>
-					<div class="form-group" style="float: left;margin-right: 40px">
-						<span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">检查方式</span>
-						<select class="form-control select2" style="width: 200px;">
-							<option selected="selected">查资料</option>
-							<option>查现场</option>
-							<option>现场询问</option>
-							<option>现场考核</option>
-						</select>
-					</div>
-					<div class="form-group" style="float: left;margin-right: 40px">
-						<span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">隐患分类</span>
-						<select class="form-control select2" style="width: 200px;">
-							<option selected="selected">符合项</option>
-							<option>一般隐患</option>
-							<option>重大隐患</option>
-						</select>
-					</div>
-					<div class="form-group" style="float: left;margin-right: 40px">
-						<span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">单元</span>
-						<select class="form-control select2" style="width: 200px;">
-							<option>隐患排查与风险管理</option>
-							<option>危险化学品政策</option>
-						</select>
-					</div>
-					<div class="form-group" style="float: left;margin-right: 40px">
-						<span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">项目</span>
-						<select class="form-control select2" style="width: 200px;">
-							<option>7.1</option>
-							<option>7.2</option>
-							<option>7.3</option>
-						</select>
-					</div>
-                </tr>
-                <tr>
-					<div class="form-group"style="float: left"   >
-						<span style="float: left;margin-top: 140px;margin-right: 5px;font-size:20px;">现场情况</span>
-						<textarea style="width:1400px ;height: 250px;" ></textarea>
-					</div>
+				<form id="inputform" th:action="@{/input}" th:method="post">
+				  <table class="table table-condensed">
+					<tr>
+						<div class="form-group" style="float: left;margin-right: 40px">
+							<span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">检查方式</span>
+							<select name="method" class="form-control select2" style="width: 200px;">
+								<option selected="selected">--请选择--</option>
+								<option th:value="查资料">查资料</option>
+								<option th:value="查现场">查现场</option>
+								<option th:value="现场询问">现场询问</option>
+								<option th:value="现场考核">现场考核</option>
+							</select>
+						</div>
+						<div class="form-group" style="float: left;margin-right: 40px">
+							<span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">隐患分类</span>
+							<select name="kind" class="form-control select2" style="width: 200px;">
+								<option selected="selected">--请选择--</option>
+								<option th:value="符合项">符合项</option>
+								<option th:value="一般隐患">一般隐患</option>
+								<option th:value="重大隐患">重大隐患</option>
+							</select>
+						</div>
+						<div class="form-group" style="float: left;margin-right: 40px">
+							<span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">单元</span>
+							<select name="gsId" class="form-control select2" style="width: 200px;">
+								<option th:value="1">隐患排查与风险管理</option>
+								<option th:value="2">危险化学品政策</option>
+							</select>
+						</div>
+						<div class="form-group" style="float: left;margin-right: 40px">
+							<span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">项目</span>
+							<select name="gsrId" class="form-control select2" style="width: 200px;">
+								<option th:value="1">7.1</option>
+								<option th:value="2">7.2</option>
+							</select>
+						</div>
+					</tr>
+					<tr>
+						<div class="form-group"style="float: left"   >
+							<span style="float: left;margin-top: 140px;margin-right: 5px;font-size:20px;">现场情况</span>
+							<textarea id="condition" name="condition" style="width:1400px ;height: 250px;" ></textarea>
+						</div>
 
-                </tr>
-                <tr>
-					<div class="form-group"style="float: left"   >
-					<button type="button" class="btn btn-block btn-default"  style="width: 200px;height: 30px;float: left;margin-top: 5px;">暂存</button>
-					<button type="button" class="btn btn-block btn-default"  style="width: 200px;height: 30px;float: left; margin-left: 10px;">完成</button>
-					<button type="button" class="btn btn-block btn-default"  style="width:200px;height: 30px;float: left;margin-left: 10px;">取消</button>
-					</div>
-                </tr>
-                <tr>
-					<div style="width: 100%;height:60px;float: left;"></div>
-                </tr>
-                <tr>
-                	<td style="width: 200px;height: 150px;border: 1px solid gainsboro;">7.11</td>
-                	<td style="width: 200px;height: 150px;border: 1px solid gainsboro;">危险化学品单位应当建立完善重大危险源安全管理规章制度和安全操作规程，并采取有效措施保证其得到执行。</td>
-                	<td style="width: 200px;height: 150px;border: 1px solid gainsboro;">《危险化学品重大危险源监督管理暂行规定》第12条</td>
-                </tr> 
-              </table>
+					</tr>
+					<tr>
+						<div class="form-group"style="float: left"   >
+						<button type="button" class="btn btn-block btn-default"  style="width: 200px;height: 30px;float: left;margin-top: 5px;">暂存</button>
+						<button type="submit" class="btn btn-block btn-default" onclick="$(#'inputform').submit();"  style="width: 200px;height: 30px;float: left; margin-left: 10px;">完成</button>
+						<button type="button" class="btn btn-block btn-default"  style="width:200px;height: 30px;float: left;margin-left: 10px;">取消</button>
+						</div>
+					</tr>
+				  </table>
+				</form>
+					<table>
+					<tr>
+						<div style="width: 100%;height:60px;float: left;"></div>
+					</tr>
+					<tr>
+						<td style="width: 200px;height: 150px;border: 1px solid gainsboro;">7.11</td>
+						<td style="width: 200px;height: 150px;border: 1px solid gainsboro;">危险化学品单位应当建立完善重大危险源安全管理规章制度和安全操作规程，并采取有效措施保证其得到执行。</td>
+						<td style="width: 200px;height: 150px;border: 1px solid gainsboro;">《危险化学品重大危险源监督管理暂行规定》第12条</td>
+					</tr>
+				  </table>
             </div>
             <!-- /.box-body -->
          </div>
@@ -96,11 +101,11 @@
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 3 -->
-<script th:src="@{/bower_components/jquery/dist/jquery.min.js}" ></script>
+<script th:src="@{/jqjs/jquery.min.js}" ></script>
 <!-- Bootstrap 3.3.7 -->
-<script th:src="@{/bower_components/bootstrap/dist/js/bootstrap.min.js}" ></script>
+<script th:src="@{/jqjs/bootstrap.min.js}" ></script>
 <!-- AdminLTE App -->
-<script th:src="@{/dist/js/adminlte.min.js}" ></script>
+<script th:src="@{/jqjs/adminlte.min.js}" ></script>
 <!--图表-->
 <script th:src="@{/Tujs/corechart.js}" ></script>
 <script th:src="@{/Tujs/jquery-1.10.2.min.js}" ></script>

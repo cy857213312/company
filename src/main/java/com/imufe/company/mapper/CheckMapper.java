@@ -1,5 +1,6 @@
 package com.imufe.company.mapper;
 
+import com.imufe.company.dto.Detail;
 import com.imufe.company.entity.Check;
 import com.imufe.company.entity.SecurityCheck;
 import org.springframework.stereotype.Repository;
@@ -14,10 +15,11 @@ public interface CheckMapper {
     int deleteByPrimaryKey(Integer id);
 
     int insert(Check record);
+//    int update(Check record);
 
     int insertSelective(Check record);
 
-    Check selectByPrimaryKey(Integer id);
+    Detail selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(Check record);
 

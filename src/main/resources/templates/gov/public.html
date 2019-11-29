@@ -8,14 +8,15 @@
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<link rel="stylesheet" th:href="@{/jqcss/bootstrap.min.css}" >
 	<!-- Font Awesome -->
-	<link rel="stylesheet"th:href="@{/jqcss/font-awesome/css/font-awesome.min.css}" >
+	<link rel="stylesheet" th:href="@{/jqcss/font-awesome/css/font-awesome.min.css}" >
 	<!-- Ionicons -->
 	<link rel="stylesheet" th:href="@{/jqcss/Ionicons/css/ionicons.min.css}" >
-	<!-- DataTables -->
-	<link rel="stylesheet" th:href="@{/jqcss/dataTables.bootstrap.min.css}" >
 	<!-- Theme style -->
-	<link rel="stylesheet" th:href="@{/jqcss/AdminLTE.min.css}" >
+	<link rel="stylesheet" th:href="@{/jqcss/AdminLTE.min.css}">
 	<link rel="stylesheet" th:href="@{/jqcss/skin-blue.min.css}">
+
+	<!-- DataTables -->
+	<link rel="stylesheet" th:href="@{/jqcss/datatables.net-bs/css/dataTables.bootstrap.min.css}" >
 	<!--a标签-->
 	<link rel="stylesheet" th:href="@{/css/tj.css}">
 	<!--图表-->
@@ -121,14 +122,11 @@
 			<!-- 侧边栏菜单 -->
 			<ul class="sidebar-menu" data-widget="tree">
 				<li class="header">导航栏</li>
-				<!-- 还可以向链接添加图标-->
-				<!--<li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-                <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>-->
 				<li class="treeview">
-					<a href="#"><i class="fa fa-link"></i> <span>监督管理信息</span>
+					<a href="#"><i class="fa fa-link"></i><span>监督管理信息</span>
 						<span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
+             			   <i class="fa fa-angle-left pull-right"></i>
+              			</span>
 					</a>
 					<ul class="treeview-menu">
 						<li><a  th:href="@{/assess}" >评估信息</a></li>
@@ -137,8 +135,8 @@
 					</ul>
 					<a href="#"><i class="fa fa-link"></i> <span>企业管理信息</span>
 						<span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
+              				  <i class="fa fa-angle-left pull-right"></i>
+          			    </span>
 					</a>
 					<ul class="treeview-menu">
 						<li><a th:href="@{/check}">自查数据</a></li>

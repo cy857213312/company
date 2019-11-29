@@ -1,5 +1,6 @@
 package com.imufe.company.controller;
 
+import com.imufe.company.dto.Detail;
 import com.imufe.company.entity.Check;
 import com.imufe.company.entity.Company;
 import com.imufe.company.entity.SecurityCheck;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
@@ -44,12 +46,8 @@ public class ManageController {
     }
     //前往添加页面
     @GetMapping("/add")
-    public  String toAddPage(Map<String,Object>map){
-        //查询所有检查方式
-        final List<SecurityCheck> checks = checkMapper.getChecks();
-        map.put("checks",checks);
-
-        map.put("checksname",checks.get(0).getSname());
+    public  String toAddPage(Map<String,Object>map, HttpSession session){
+        //检查部门名，根据当前登录id显示
         return "gov/reg/add";
     }
     @PostMapping("/add")
@@ -57,12 +55,17 @@ public class ManageController {
         checkMapper.insert(check);
         return "gov/reg/entry";
     }
+    @PostMapping("/input")
+    public String input(Check check){
+        checkMapper.insert(check);
+        return "gov/reg/reg";
+    }
 
     //查看详细信息
     @GetMapping("/view/{id}")
     public  String view(@PathVariable("id") Integer id, Map<String,Object> map){
-        final Check check = checkMapper.selectByPrimaryKey(id);
-        map.put("check",check);
+        final Detail detail = checkMapper.selectByPrimaryKey(id);
+        map.put("detail",detail);
         return "gov/reg/view";
     }
     //信息对比页面
@@ -78,6 +81,7 @@ public class ManageController {
     public String toCheck(){
         return "gov/ent/check";
     }
+
     //进入基本信息页面
     @Autowired
     CompanyMapper companyMapper;

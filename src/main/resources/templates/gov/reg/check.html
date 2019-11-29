@@ -50,7 +50,7 @@
                 <tr th:each="c : ${checks}">
                   <td th:text="${#dates.format(c.createTime,'yyyy-MM-dd')}">2029-11-01</td>
                   <td th:text="${c.sname}">准格尔安监局</td>
-                  <td th:text="${c.kind}">突击检查</td>
+                  <td th:text="${c.type== 0 ? '例行检查':(c.type==1 ? '突击检查':'特殊日期检查' )}">突击检查</td>
                   <td th:text="${c.name}">王一</td>
                   <td><a th:href="@{/view/} + ${c.id}" style="color: #0c89de">查看</a></td>
                 </tr>
@@ -76,20 +76,20 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script th:src="@{/bower_components/jquery/dist/jquery.min.js}" ></script>
+<script th:src="@{/jqjs/jquery.min.js}" ></script>
 <!-- Bootstrap 3.3.7 -->
-<script th:src="@{/bower_components/bootstrap/dist/js/bootstrap.min.js}" ></script>
+<script th:src="@{/jqjs/bootstrap.min.js}" ></script>
 <!-- DataTables -->
-<script th:src="@{/bower_components/datatables.net/js/jquery.dataTables.min.js}" ></script>
-<script th:src="@{/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js}" ></script>
+<script th:src="@{/jqjs/jquery.dataTables.min.js}" ></script>
+<script th:src="@{/jqjs/dataTables.bootstrap.min.js}" ></script>
 <!-- SlimScroll -->
-<script th:src="@{/bower_components/jquery-slimscroll/jquery.slimscroll.min.js}" ></script>
+<script th:src="@{/jqjs/jquery.slimscroll.min.js}" ></script>
 <!-- FastClick -->
-<script th:src="@{/bower_components/fastclick/lib/fastclick.js}" ></script>
+<script th:src="@{/jqjs/fastclick.js}" ></script>
 <!-- AdminLTE App -->
-<script th:src="@{/dist/js/adminlte.min.js}"></script>
+<script th:src="@{/jqjs/adminlte.min.js}"></script>
 <!-- AdminLTE for demo purposes -->
-<script th:src="@{/dist/js/demo.js}" ></script>
+<script th:src="@{/jqjs/demo.js}" ></script>
 <!-- page script -->
 <script>
   $(function () {

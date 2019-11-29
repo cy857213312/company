@@ -24,11 +24,11 @@
     select *
     from `check`
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from check
-    where id = #{id,jdbcType=INTEGER}
+  <select id="selectByPrimaryKey" resultType="com.imufe.company.dto.Detail">
+  SELECT s.name AS sname,c.*,g.*
+  FROM `check` c LEFT JOIN security_department s on c.sd_id=s.id
+  LEFT JOIN gra_subsidiary_rules g on c.gsr_id=g.id
+  WHERE c.id=#{id}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from check
@@ -36,14 +36,19 @@
   </delete>
   <insert id="insert">
 INSERT INTO `check` ( `sd_id`, `type`, `name`, `method`, `kind`, `gs_id`, `gsr_id`, `condition`, `score`, `create_time`)
- VALUES ( #{sdId},  #{type},  #{name}, #{method},  #{kind},  #{gsId},  #{gsrId}, #{condition},  #{score},#{createTime});
+ VALUES ( #{sdId}, #{type},  #{name}, #{method},  #{kind},  #{gsId},  #{gsrId}, #{condition},  #{score},#{createTime});
   </insert>
+<!--  <update id="update">-->
+<!--    UPDATE `check`-->
+<!--    SET  `sd_id`=#{sdId}, `type`=#{type}, `name`=#{name}, `method`=#{method}, `kind`=#{kind}, `gs_id`=#{gsId}, `gsr_id`=#{gsrId}, `condition`=#{condition}, `score`= #{score}, `create_time`=#{createTime}-->
+<!--    WHERE (`id`=#{id});-->
+<!--  </update>-->
   <insert id="insertSelective" parameterType="com.imufe.company.entity.Check">
     insert into check
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
-      </if>.00
+      </if>
       <if test="sdId != null">
         sd_id,
       </if>

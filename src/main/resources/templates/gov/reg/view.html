@@ -33,10 +33,10 @@
                   <th >检查人员</th>
                 </tr>
                 <tr>
-                  <td th:text="${check.createTime}">2019年9月4日 星期三</td>
-                  <td th:text="${check.name}">准格尔安监局</td>
-                  <td th:text="${check.kind}">例行检查</td>
-                  <td th:text="${check.name}">张三</td>
+                  <td th:text="${#dates.format(detail.createTime,'yyyy-MM-dd')}">2019年9月4日 星期三</td>
+                  <td th:text="${detail.sname}">准格尔安监局</td>
+                  <td th:text="${detail.type== 0 ? '例行检查':(detail.type==1 ? '突击检查':'特殊日期检查' )}">例行检查</td>
+                  <td th:text="${detail.name}">张三</td>
                 </tr>
                 
               </table>
@@ -49,20 +49,20 @@
             <div class="box-body">
              <table class="table table-bordered"  style="word-break: break-all;word-wrap:break-word;table-layout: fixed;">
                 <tr>
-                  <th>条款</th>
-                  <th>检查内容</th>
-                  <th>检查依据</th>
-                  <th>检查方式</th>
-                  <th>现场实际情况</th>
-                  <th>隐患分类</th>
+                  <th >条款</th>
+                  <th >检查内容</th>
+                  <th >检查依据</th>
+                  <th >检查方式</th>
+                  <th >现场实际情况</th>
+                  <th >隐患分类</th>
                 </tr>
                 <tr>
-                  <td>7.1</td>
-                  <td>重大危险源配备温度、压力、液位、流量、组份等信息的不间断采集和监测系统以及可燃气体和有毒有害气体泄漏检测报警装置，并具备信息远传、连续记录、事故预警、信息存储等功能；一级或者二级重大危险源，具备紧急停车功能。记录的电子数据的保存时间不少于30天。</td>
-                  <td>《危险化学品重大风险源监督管理暂行规定》</td>
-                  <td>查资料</td>
-                  <td>一些描述</td>
-                  <td>一般隐患</td>
+                  <td th:text="${detail.number}">7.1</td>
+                  <td th:text="${detail.content}" >重大危险源配备温度、压力、液位、流量、组份等信息的不间断采集和监测系统以及可燃气体和有毒有害气体泄漏检测报警装置，并具备信息远传、连续记录、事故预警、信息存储等功能；一级或者二级重大危险源，具备紧急停车功能。记录的电子数据的保存时间不少于30天。</td>
+                  <td th:text="${detail.gist}">《危险化学品重大风险源监督管理暂行规定》</td>
+                  <td th:text="${detail.method}">查资料</td>
+                  <td th:text="${detail.condition}">一些描述</td>
+                  <td th:text="${detail.kind}">一般隐患</td>
                 </tr>
                 
               </table>
@@ -79,11 +79,11 @@
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 3 -->
-<script th:src="@{/bower_components/jquery/dist/jquery.min.js}" ></script>
+<script th:src="@{/jqjs/jquery.min.js}" ></script>
 <!-- Bootstrap 3.3.7 -->
-<script th:src="@{/bower_components/bootstrap/dist/js/bootstrap.min.js}" ></script>
+<script th:src="@{/jqjs/bootstrap.min.js}" ></script>
 <!-- AdminLTE App -->
-<script th:src="@{/dist/js/adminlte.min.js}" ></script>
+<script th:src="@{/jqjs/adminlte.min.js}" ></script>
 <!--图表-->
 <script th:src="@{/Tujs/corechart.js}" ></script>
 <script th:src="@{/Tujs/jquery-1.10.2.min.js}" ></script>
