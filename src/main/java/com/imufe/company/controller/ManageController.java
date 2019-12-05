@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -30,9 +31,10 @@ public class ManageController {
     @Autowired
     CheckMapper checkMapper;
     @GetMapping("/assess")
-    public String assess(Map<String,Object> map){
-        final List<Check> point = checkMapper.selectChecks();
-        map.put("point",point);
+    public String assess(){
+//    public String assess(Map<String,Object> map){
+//        final List<Check> point = checkMapper.selectChecks();
+//        map.put("point",point);
         return "gov/reg/assess";
     }
 
@@ -51,10 +53,11 @@ public class ManageController {
         return "gov/reg/add";
     }
     @PostMapping("/add")
-    public String add(Check check){
+    public String add(Check check, HttpSession session, String sname, Integer type, String name, Date createTime){
         checkMapper.insert(check);
         return "gov/reg/entry";
     }
+    //
     @PostMapping("/input")
     public String input(Check check){
         checkMapper.insert(check);

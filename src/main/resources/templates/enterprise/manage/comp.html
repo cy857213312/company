@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="gov/public :: #public_head">
+<head th:replace="enterprise/public :: #public_head">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
+
     <!--主标题 -->
-    <header class="main-header" th:replace="gov/public :: #public_header">
+    <header class="main-header" th:replace="enterprise/public :: #public_header">
     </header>
     <!-- 左列。包含徽标和边栏-->
-    <aside class="main-sidebar" th:replace="gov/public :: #public_aside">
+    <aside class="main-sidebar" th:replace="enterprise/public :: #public_aside">
     </aside>
 
-  <!-- 内容包装器。包含页面内容 -->
-  <div class="content-wrapper">
-			<section class="content-header">
-		     <span>开始日期</span><input> </input> 
-		     <span>结束日期</span><input> </input>
-		     <button style="width:120px;height:30px;background-color: #0079F7;color:white ;border-radius: 10px;">查询</button>
-		  </section>
-    <!-- 主要内容 -->
-    <section class="content container-fluid">
-		<div id="main" style="width: 1300px;height:500px;"></div>
-    </section>
-  </div>
-    <!-- /.content -->
+	<!-- 内容包装器。包含页面内容 -->
+	<div class="content-wrapper">
+		<section class="content-header">
+			<span>开始日期</span><input> </input>
+			<span>结束日期</span><input> </input>
+			<button style="width:120px;height:30px;background-color: #0079F7;color:white ;border-radius: 10px;">查询</button>
+		</section>
+		<!-- 主要内容 -->
+		<section class="content container-fluid">
+			<div id="main" style="width: 1300px;height:500px;"></div>
+		</section>
+	</div>
+	<!-- /.content -->
 </div>
-  <!-- /.content-wrapper -->
+<!-- /.content-wrapper -->
 
 
 <!-- REQUIRED JS SCRIPTS -->

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="gov/public :: #public_head">
+<head th:replace="enterprise/public :: #public_head">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
     <!--主标题 -->
-    <header class="main-header" th:replace="gov/public :: #public_header">
+    <header class="main-header" th:replace="enterprise/public :: #public_header">
     </header>
     <!-- 左列。包含徽标和边栏-->
-    <aside class="main-sidebar" th:replace="gov/public :: #public_aside">
+    <aside class="main-sidebar" th:replace="enterprise/public :: #public_aside">
     </aside>
 
   <!-- 内容包装器。包含页面内容 -->
   <div class="content-wrapper">
   	<section class="content-header">
-		<a th:href="@{/basic}"><button  type="button" class="btn btn-block btn-outline-secondary" style="width: 200px;height: 40px;margin-right: 10px; float: left;">基本信息</button></a>
-		<a th:href="@{/person}" ><button type="button" class="btn btn-block btn-outline-secondary" style="width: 200px;height: 40px;margin-right: 10px; float: left;background-color: #E2ECF5;" >人员信息</button></a>
-		<a th:href="@{/else}" > <button type="button" class="btn btn-block btn-outline-secondary"style="width: 200px;height: 40px;" >其它信息</button></a>
+		<a th:href="@{/toBasic}"><button  type="button" class="btn btn-block btn-outline-secondary" style="width: 200px;height: 40px;margin-right: 10px; float: left;">基本信息</button></a>
+		<a th:href="@{/toPerson}" ><button type="button" class="btn btn-block btn-outline-secondary" style="width: 200px;height: 40px;margin-right: 10px; float: left;background-color: #E2ECF5;" >人员信息</button></a>
+		<a th:href="@{/toElse}" > <button type="button" class="btn btn-block btn-outline-secondary"style="width: 200px;height: 40px;" >其它信息</button></a>
   	</section>
     <!-- 主要内容 -->
     <section class="content container-fluid">
@@ -31,27 +31,27 @@
               <table class="table table-condensed" >
 		                <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">主要负责人数</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" th:value="${company.mainPerson}" value="2" style="width: 80%;"></td>
+			                  <td><input  class="form-control"  value="2" style="width: 80%;"></td>
 		                </tr>
 		                <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">中层人员数量</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" th:value="${company.middlePerson}" value="32" style="width: 80%;"></td>
+			                  <td><input  class="form-control"  value="32" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">安全人员数量</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" th:value="${company.safetyPerson}" value="10" style="width: 80%;"></td>
+			                  <td><input  class="form-control"  value="10" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">技术人员</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" th:value="${company.technologyPerson}" value="10" style="width: 80%;"></td>
+			                  <td><input  class="form-control"  value="10" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">工作人员</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" th:value="${company.workPerson}" value="10" style="width: 80%;"></td>
+			                  <td><input  class="form-control"  value="10" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">现场操作人员</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" th:value="${company.handlePerson}" value="10" style="width: 80%;"></td>
+			                  <td><input  class="form-control"  value="10" style="width: 80%;"></td>
 		                </tr>
 		               
               </table>
@@ -72,5 +72,6 @@
 <script th:src="@{/jqjs/bootstrap.min.js}" ></script>
 <!-- AdminLTE App -->
 <script th:src="@{/jqjs/adminlte.min.js}" ></script>
+
 </body>
 </html>

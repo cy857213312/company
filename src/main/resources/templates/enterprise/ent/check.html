@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="enterprise/public :: #public_head">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!--主标题 -->
+  <header class="main-header" th:replace="enterprise/public :: #public_header">
+  </header>
+  <!-- 左列。包含徽标和边栏-->
+  <aside class="main-sidebar" th:replace="enterprise/public :: #public_aside">
+  </aside>
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+    	<div class="search">
+    		 <h1>
+       		检查记录
+        <small>进行其它操作</small>
+    	  </h1>
+     	<a href="#">添加</a>
+     	<a href="#">备份信息</a>
+     	<a href="#">备份细节</a>
+    	</div>
+     
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">检查表</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>检查时间</th>
+                  <th>检查机构</th>
+                  <th>检查形式</th>
+                  <th>检查人姓名</th>
+                  <th>详细信息</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>2029-11-01</td>
+                  <td>准格尔安监局</td>
+                  <td>突击检查</td>
+                  <td>王一</td>
+                  <td><a th:href="@{/toView}">查看</a></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+          
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+
+
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script th:src="@{/jqjs/jquery.min.js}" ></script>
+<!-- Bootstrap 3.3.7 -->
+<script th:src="@{/jqjs/bootstrap.min.js}" ></script>
+<!-- DataTables -->
+<script th:src="@{/jqjs/jquery.dataTables.min.js}" ></script>
+<script th:src="@{/jqjs/dataTables.bootstrap.min.js}" ></script>
+<!-- SlimScroll -->
+<script th:src="@{/jqjs/jquery.slimscroll.min.js}" ></script>
+<!-- FastClick -->
+<script th:src="@{/jqjs/fastclick.js}" ></script>
+<!-- AdminLTE App -->
+<script th:src="@{/jqjs/adminlte.min.js}"></script>
+<!-- AdminLTE for demo purposes -->
+<script th:src="@{/jqjs/demo.js}" ></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+</script>
+</body>
+</html>

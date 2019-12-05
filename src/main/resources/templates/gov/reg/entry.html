@@ -31,7 +31,7 @@
 					<tr>
 						<div class="form-group" style="float: left;margin-right: 40px">
 							<span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">检查方式</span>
-							<select name="method" class="form-control select2" style="width: 200px;">
+							<select id="checkAction" name="method" class="form-control select2" style="width: 200px;">
 								<option selected="selected">--请选择--</option>
 								<option th:value="查资料">查资料</option>
 								<option th:value="查现场">查现场</option>
@@ -41,7 +41,7 @@
 						</div>
 						<div class="form-group" style="float: left;margin-right: 40px">
 							<span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">隐患分类</span>
-							<select name="kind" class="form-control select2" style="width: 200px;">
+							<select id="hidden" name="kind" class="form-control select2" style="width: 200px;">
 								<option selected="selected">--请选择--</option>
 								<option th:value="符合项">符合项</option>
 								<option th:value="一般隐患">一般隐患</option>
@@ -49,15 +49,15 @@
 							</select>
 						</div>
 						<div class="form-group" style="float: left;margin-right: 40px">
-							<span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">单元</span>
-							<select name="gsId" class="form-control select2" style="width: 200px;">
+							<span  style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">单元</span>
+							<select id="element" name="gsId" class="form-control select2" style="width: 200px;">
 								<option th:value="1">隐患排查与风险管理</option>
 								<option th:value="2">危险化学品政策</option>
 							</select>
 						</div>
 						<div class="form-group" style="float: left;margin-right: 40px">
-							<span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">项目</span>
-							<select name="gsrId" class="form-control select2" style="width: 200px;">
+							<span  style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">项目</span>
+							<select id="project" name="gsrId" class="form-control select2" style="width: 200px;">
 								<option th:value="1">7.1</option>
 								<option th:value="2">7.2</option>
 							</select>
@@ -72,7 +72,7 @@
 					</tr>
 					<tr>
 						<div class="form-group"style="float: left"   >
-						<button type="button" class="btn btn-block btn-default"  style="width: 200px;height: 30px;float: left;margin-top: 5px;">暂存</button>
+						<button type="button" class="btn btn-block btn-default" onclick="zancun()"  style="width: 200px;height: 30px;float: left;margin-top: 5px;">暂存</button>
 						<button type="submit" class="btn btn-block btn-default" onclick="$(#'inputform').submit();"  style="width: 200px;height: 30px;float: left; margin-left: 10px;">完成</button>
 						<button type="button" class="btn btn-block btn-default"  style="width:200px;height: 30px;float: left;margin-left: 10px;">取消</button>
 						</div>
@@ -106,11 +106,35 @@
 <script th:src="@{/jqjs/bootstrap.min.js}" ></script>
 <!-- AdminLTE App -->
 <script th:src="@{/jqjs/adminlte.min.js}" ></script>
-<!--图表-->
-<script th:src="@{/Tujs/corechart.js}" ></script>
-<script th:src="@{/Tujs/jquery-1.10.2.min.js}" ></script>
-<script th:src="@{/Tujs/jquery.gvChart-1.0.1.min.js}" ></script>
-<script th:src="@{/Tujs/jsapi.js}"></script>
-<script th:src="@{/Tujs/tu.js}" ></script>
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+<!--<script th:src="@{/Tujs/tu.js}" ></script>-->
+<script>
+
+    $(function () {
+        var storage = window.sessionStorage;
+
+        if(storage["checkAction"]!=null) {
+            $("#checkAction option[value='" + storage["checkAction"] + "']").attr("selected", true);
+            $("#hidden option[value='" + storage["hidden"] + "']").attr("selected", true);
+            $("#element option[value='" + storage["element"] + "']").attr("selected", true);
+            $("#project option[value='" + storage["project"] + "']").attr("selected", true);
+            $('#condition').val(storage["condition"]);
+
+        }
+    })
+
+    function zancun() {
+
+        sessionStorage.setItem("checkAction",$('#checkAction').val())
+        console.log($('#hidden').val())
+        sessionStorage.setItem("hidden",$('#hidden').val())
+        sessionStorage.setItem("element",$('#element').val())
+        sessionStorage.setItem("project",$('#project').val())
+        sessionStorage.setItem("condition",$('#condition').val())
+        alert("暂存成功！")
+    }
+
+
+</script>
 </body>
 </html>

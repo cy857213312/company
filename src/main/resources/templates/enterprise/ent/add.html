@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="gov/public :: #public_head">
+<head th:replace="enterprise/public :: #public_head">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
+
   <!--主标题 -->
-  <header class="main-header" th:replace="gov/public :: #public_header">
+  <header class="main-header" th:replace="enterprise/public :: #public_header">
   </header>
   <!-- 左列。包含徽标和边栏-->
-  <aside class="main-sidebar" th:replace="gov/public :: #public_aside">
+  <aside class="main-sidebar" th:replace="enterprise/public :: #public_aside">
   </aside>
 
   <!-- 内容包装器。包含页面内容 -->
@@ -23,30 +24,29 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" id="addform" th:action="@{/add}" th:method="post">
+            <form role="form">
               <div class="box-body">
                 <div class="form-group">
-                  <label >检查部门</label>
-                  <input  name="sname" id="sname" class="form-control"  th:value="${session.loginUser.TId == 0 ? '准格尔安监局':'企业'}"/>
+                  <label>检查部门</label>
+                  <input  class="form-control" value="准格尔安监局">
                 </div>
                 <div class="form-group">
                   <label>检查类型</label>
-               			 <select name="type" class="form-control select2" style="width: 100%;">
-                           <option selected="selected">--请选择--</option>
-			                  <option  value="0" th:value="0">例行检查</option>
-			                  <option  value="1" th:value="1">突击检查</option>
-			                  <option  value="2" th:value="2">特殊日期检查</option>
+               			 <select class="form-control select2" style="width: 100%;">
+			                  <option selected="selected">例行检查</option>
+			                  <option>突击检查</option>
+			                  <option>特殊日期检查</option>
                				</select>
                 </div>
                 <div class="form-group">
                   <label>检查人</label>
-                  <input name="name" id="name" class="form-control" />
+                  <input class="form-control" >
                 </div>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary" onclick="$(#'addform').submit();">开始录入</button>
+                <button type="submit" class="btn btn-primary">开始录入</button>
               </div>
             </form>
           </div>
@@ -55,10 +55,9 @@
     <!-- /.content -->
    
   <!-- /.content-wrapper -->
+
 </div>
-
 <!-- REQUIRED JS SCRIPTS -->
-
 <!-- jQuery 3 -->
 <script th:src="@{/jqjs/jquery.min.js}" ></script>
 <!-- Bootstrap 3.3.7 -->

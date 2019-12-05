@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="enterprise/public :: #public_head">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <!--主标题 -->
+    <header class="main-header" th:replace="enterprise/public :: #public_header">
+    </header>
+    <!-- 左列。包含徽标和边栏-->
+    <aside class="main-sidebar" th:replace="enterprise/public :: #public_aside">
+    </aside>
+
+  <!-- 内容包装器。包含页面内容 -->
+  <div class="content-wrapper">
+  	<section class="content-header">
+      <button type="button" class="btn btn-block btn-outline-secondary" style="width: 200px;height: 40px;margin-top: 5px;margin-right: 10px; float: left;">录入信息</button>
+       <button type="button" class="btn btn-block btn-outline-secondary"style="width: 200px;height: 40px;" >查看结果</button>
+    </section>
+    <!-- 主要内容 -->
+			<!--你的内容-->
+			  <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">录入信息</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table class="table table-condensed">
+                <tr>
+	                  <div class="form-group" style="float: left;margin-right: 40px">
+	                  	   <span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">检查方式</span>
+		               			 <select class="form-control select2" style="width: 200px;">
+					                  <option selected="selected">查资料</option>
+					                  <option>查现场</option>
+					                  <option>现场询问</option>
+					                  <option>现场考核</option>
+		               				</select>
+		           		  </div>
+		           		  <div class="form-group" style="float: left;margin-right: 40px">
+	                  	   <span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">隐患分类</span>
+		               			 <select class="form-control select2" style="width: 200px;">
+					                  <option selected="selected">符合项</option>
+					                  <option>一般隐患</option>
+					                  <option>重大隐患</option>
+		               				</select>
+		           		  </div>
+		           		  <div class="form-group" style="float: left;margin-right: 40px">
+	                  	   <span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">单元</span>
+		               			 <select class="form-control select2" style="width: 200px;">
+					                  <option>隐患排查与风险管理</option>
+					                  <option>危险化学品政策</option>
+		               				</select>
+		           		  </div>
+		           		  <div class="form-group" style="float: left;margin-right: 40px">
+	                  	   <span style="float: left;margin-top: 5px;margin-right: 5px;font-size:20px;">项目</span>
+		               			 <select class="form-control select2" style="width: 200px;">
+					                  <option>7.1</option>
+					                  <option>7.2</option>
+					                  <option>7.3</option>
+		               				</select>
+		           		  </div>
+                </tr>
+                <tr>
+	                   <div class="form-group">
+		                  	  <span style="float: left;margin-top: 140px;margin-right: 5px;font-size:20px;">现场情况</span>
+			               			<textarea style="width:1000px ;height: 250px;" ></textarea>
+			           		 </div>
+                </tr>
+                <tr>
+                		<button type="button" class="btn btn-block btn-default"  style="width: 200px;height: 30px;float: left;margin-top: 5px;">暂存</button>
+		              	<button type="button" class="btn btn-block btn-default"  style="width: 200px;height: 30px;float: left; margin-left: 10px;">完成</button>
+										<button type="button" class="btn btn-block btn-default"  style="width:200px;height: 30px;float: left;margin-left: 10px;">取消</button>
+                </tr>
+                <tr>
+                		<div style="width: 100%;height:60px;float: left;"></div>
+                </tr>
+                <tr>
+                	<td style="width: 200px;height: 150px;border: 1px solid gainsboro;">7.11</td>
+                	<td style="width: 200px;height: 150px;border: 1px solid gainsboro;">危险化学品单位应当建立完善重大危险源安全管理规章制度和安全操作规程，并采取有效措施保证其得到执行。</td>
+                	<td style="width: 200px;height: 150px;border: 1px solid gainsboro;">《危险化学品重大危险源监督管理暂行规定》第12条</td>
+                </tr> 
+              </table>
+            </div>
+            <!-- /.box-body -->
+         </div>
+  </div>
+    <!-- /.content -->
+   
+  <!-- /.content-wrapper -->
+</div>
+
+<!-- REQUIRED JS SCRIPTS -->
+
+    <!-- jQuery 3 -->
+    <script th:src="@{/jqjs/jquery.min.js}" ></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script th:src="@{/jqjs/bootstrap.min.js}" ></script>
+    <!-- AdminLTE App -->
+    <script th:src="@{/jqjs/adminlte.min.js}" ></script>
+
+</body>
+</html>
