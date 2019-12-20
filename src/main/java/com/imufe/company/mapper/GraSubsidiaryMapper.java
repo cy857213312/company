@@ -9,6 +9,8 @@ import java.util.List;
 
 @Repository
 public interface GraSubsidiaryMapper {
+    List<GraSubsidiary> getGraSubsidiarys();
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(GraSubsidiary record);

@@ -28,72 +28,72 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table class="table table-condensed" >
-		                <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">企业名称</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control"  value="易高" style="width: 80%;"></td>
-		                </tr>
-		                <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">统一信用代码</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control"  value="123" style="width: 80%;"></td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">地址</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control"  value="准格尔市" style="width: 80%;"></td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">企业性质码</label><span style="color: red;">*</span></td>
-			                  <td><input  class="form-control"  value="1" style="width: 80%;"></td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">法人代表姓名</label><span style="color: red;">*</span></td>
-			                  <td><input  class="form-control"  value="王五" style="width: 80%;"></td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">电话号码</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control"  value="11111111" style="width: 80%;"></td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">传真号码</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control"  value="1111" style="width: 80%;"></td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">电邮</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control"  value="1111" style="width: 80%;"></td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">生产许可</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control"  value="1111" style="width: 80%;"></td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">企业人数</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control"  value="4" style="width: 80%;"></td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">企业简介</label><span style="color: red;">*</span></td> 
-			                  <td><textarea style="width:80%;height: 60px;" ></textarea></td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">企业类别</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control"  value="准格尔安监局" style="width: 80%;"></td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">安监部门</label><span style="color: red;">*</span></td> 
-			                  <td>
-			                  	<select class="form-control select2" style="width: 80%;">
-							                  <option selected="selected" >准格尔安监局</option>
-				               		</select>
-			                  </td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">所属区域</label><span style="color: red;">*</span></td> 
-			                  <td>
-			                  	<select class="form-control select2" style="width: 80%;">
-							                  <option selected="selected" >大路工业园区</option>
-				               		</select>
-			                  </td>
-		                </tr>
-              </table>
+				<table class="table table-condensed" >
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">企业名称</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.name}" value="易高" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">统一信用代码</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.uscc}" value="123" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">地址</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.address}" value="准格尔市" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">企业性质码</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.nature}" value="1" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">法人代表姓名</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.legal}" value="王五" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">电话号码</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.phone}" value="11111111" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">传真号码</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.fax}" value="1111" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">电邮</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.mail}" value="1111" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">生产许可</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.productionPermit}" value="1111" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">企业人数</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.number}" value="4" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">企业简介</label><span style="color: red;">*</span></td>
+						<td><textarea style="width:80%;height: 60px;" th:text="${company.produce}"></textarea></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">企业类别</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.type}" value="准格尔安监局" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">安监部门</label><span style="color: red;">*</span></td>
+						<td>
+							<select class="form-control select2" style="width: 80%;">
+								<option selected="selected" th:text="${company.sname}">准格尔安监局</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">所属区域</label><span style="color: red;">*</span></td>
+						<td>
+							<select class="form-control select2" style="width: 80%;">
+								<option selected="selected" th:text="${company.aname}">大路工业园区</option>
+							</select>
+						</td>
+					</tr>
+				</table>
             </div>
             <!-- /.box-body -->
          </div>

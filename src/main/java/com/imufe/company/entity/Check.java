@@ -2,6 +2,7 @@ package com.imufe.company.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -27,7 +28,7 @@ public class Check {
     private String condition;
 
     private Integer score;
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createTime;
 
 }

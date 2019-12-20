@@ -12,6 +12,9 @@
   <sql id="Base_Column_List">
     id, g_id, num, name, score, weight
   </sql>
+  <select id="getGraSubsidiarys" resultType="com.imufe.company.entity.GraSubsidiary">
+        select * from gra_subsidiary
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

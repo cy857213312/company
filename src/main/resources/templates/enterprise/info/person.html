@@ -28,33 +28,33 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table class="table table-condensed" >
-		                <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">主要负责人数</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control"  value="2" style="width: 80%;"></td>
-		                </tr>
-		                <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">中层人员数量</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control"  value="32" style="width: 80%;"></td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">安全人员数量</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control"  value="10" style="width: 80%;"></td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">技术人员</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control"  value="10" style="width: 80%;"></td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">工作人员</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control"  value="10" style="width: 80%;"></td>
-		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">现场操作人员</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control"  value="10" style="width: 80%;"></td>
-		                </tr>
-		               
-              </table>
+				<table class="table table-condensed" >
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">主要负责人数</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.mainPerson}" value="2" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">中层人员数量</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.middlePerson}" value="32" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">安全人员数量</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.safetyPerson}" value="10" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">技术人员</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.technologyPerson}" value="10" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">工作人员</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.workPerson}" value="10" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: right;"><label style="margin-top: 7px;">现场操作人员</label><span style="color: red;">*</span></td>
+						<td><input  class="form-control" th:value="${company.handlePerson}" value="10" style="width: 80%;"></td>
+					</tr>
+
+				</table>
             </div>
             <!-- /.box-body -->
          </div>

@@ -36,7 +36,7 @@
   </delete>
   <insert id="insert">
 INSERT INTO `check` ( `sd_id`, `type`, `name`, `method`, `kind`, `gs_id`, `gsr_id`, `condition`, `score`, `create_time`)
- VALUES ( #{sdId}, #{type},  #{name}, #{method},  #{kind},  #{gsId},  #{gsrId}, #{condition},  #{score},#{createTime});
+ VALUES ( #{sdId}, #{type},  #{name}, #{method},  #{kind},  #{gsId},  #{gsrId}, #{condition},  #{score},now());
   </insert>
 <!--  <update id="update">-->
 <!--    UPDATE `check`-->

@@ -1,21 +1,22 @@
 package com.imufe.company.controller;
 
 import com.imufe.company.dto.Detail;
-import com.imufe.company.entity.Check;
-import com.imufe.company.entity.Company;
-import com.imufe.company.entity.SecurityCheck;
+import com.imufe.company.entity.*;
 import com.imufe.company.mapper.CheckMapper;
 import com.imufe.company.mapper.CompanyMapper;
+import com.imufe.company.mapper.GraSubsidiaryMapper;
+import com.imufe.company.mapper.GraSubsidiaryRulesMapper;
+import javafx.scene.control.Alert;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Controller
 public class ManageController {
@@ -31,10 +32,19 @@ public class ManageController {
     @Autowired
     CheckMapper checkMapper;
     @GetMapping("/assess")
-    public String assess(){
-//    public String assess(Map<String,Object> map){
-//        final List<Check> point = checkMapper.selectChecks();
-//        map.put("point",point);
+    public String assess(Map<String,Object>map){
+        final List<Check> point = checkMapper.selectChecks();
+        Integer score[]=new Integer[10];
+        Vector date=new Vector();
+        String strDateFormat = "yyyy-MM-dd";
+        SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
+        for(int i=0;i<point.size();++i){
+            Check obj=(Check)point.get(i);
+            score[i]=obj.getScore();
+            date.add(sdf.format(obj.getCreateTime()));
+        }
+        map.put("score",score);
+        map.put("date",date);
         return "gov/reg/assess";
     }
 
@@ -49,18 +59,33 @@ public class ManageController {
     //前往添加页面
     @GetMapping("/add")
     public  String toAddPage(Map<String,Object>map, HttpSession session){
-        //检查部门名，根据当前登录id显示
+
         return "gov/reg/add";
     }
+    //保存添加内容等
+    @Autowired
+    GraSubsidiaryMapper graSubsidiaryMapper;
+    @Autowired
+    GraSubsidiaryRulesMapper graSubsidiaryRulesMapper;
     @PostMapping("/add")
-    public String add(Check check, HttpSession session, String sname, Integer type, String name, Date createTime){
-        checkMapper.insert(check);
+    public String add(Map<String,Object>map,Check check, HttpSession session){
+        final List<GraSubsidiary> graSubsidiarys = graSubsidiaryMapper.getGraSubsidiarys();
+        final List<GraSubsidiaryRules> rules = graSubsidiaryRulesMapper.getRules();
+        map.put("graSubsidiarys",graSubsidiarys);
+        map.put("rules",rules);
         return "gov/reg/entry";
     }
-    //
+    //存入数据库
     @PostMapping("/input")
-    public String input(Check check){
+    public String input(Check check,Map<String,Object>map){
         checkMapper.insert(check);
+        final List<SecurityCheck> checks = checkMapper.getChecks();
+        map.put("checks",checks);
+        return "gov/reg/check";
+    }
+    //查看结果
+    @GetMapping("/reg")
+    public String toReg(){
         return "gov/reg/reg";
     }
 
@@ -73,7 +98,7 @@ public class ManageController {
     }
     //信息对比页面
     @GetMapping("/comp")
-    public String toComp(){
+    public String toComp(Map<String,Object>map){
         return "gov/reg/comp";
     }
     /**

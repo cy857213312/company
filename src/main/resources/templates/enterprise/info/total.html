@@ -17,7 +17,8 @@
   <div class="content-wrapper">
       <section class="content-header">
     	<div class="search" style="width: 80px;height: 30px;">
-     		<a href="#">导出</a>
+<!--     		<button>导出</button>-->
+			<a>导出</a>
     	</div>
 	  </section>
     <!-- 主要内容 -->
@@ -25,87 +26,87 @@
 			<!--你的内容-->
   		<div class="box">
             <div class="box-body">
-              <table class="table table-condensed" style="border-collapse:collapse;border-spacing:0;" >
+              <table id="dataTable" class="table table-condensed" style="border-collapse:collapse;border-spacing:0;" >
 		                <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">企业名称</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="易高" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.name}"  style="width: 80%;"></td>
 		                </tr>
 		                <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">统一信用代码</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="123" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.uscc}"  style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">地址</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="准格尔市" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.address}" value="准格尔市" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">企业性质码</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="1" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.nature}" value="1" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">法人代表姓名</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="王五" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.legal}" value="王五" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">电话号码</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="11111111" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.phone}" value="11111111" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">传真号码</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="1111" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.fax}" value="1111" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">电邮</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="1111" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.mail}" value="1111" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">生产许可</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="1111" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.productionPermit}" value="1111" style="width: 80%;"></td>
 		                </tr>
 		               
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">企业人数</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="4" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.number}" value="4" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">企业简介</label><span style="color: red;">*</span></td> 
-			                  <td><textarea style="width:80%;height: 60px;"></textarea></td>
+			                  <td><textarea style="width:80%;height: 60px;" th:value="${company.produce}"></textarea></td>
 		                </tr>
-		                 <tr>                
-			                  <td style="text-align: right;"><label style="margin-top: 7px;">企业类别</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="易高" style="width: 80%;"></td>
-		                </tr>
+						  <tr>
+							  <td style="text-align: right;"><label style="margin-top: 7px;">企业类别</label><span style="color: red;">*</span></td>
+							  <td><input  class="form-control" th:value="${company.type}" value="准格尔安监局" style="width: 80%;"></td>
+						  </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">所属区域</label><span style="color: red;">*</span></td> 
-			               		 <td><input  class="form-control" value="准格尔安监局" style="width: 80%;"></td>
+			               		 <td><input  class="form-control" th:value="${company.aname}" value="准格尔安监局" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">主要负责人数量</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="2" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.mainPerson}" value="2" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">中层人员数量</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="准格尔安监局" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.middlePerson}" value="准格尔安监局" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">安全人员数量</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="准格尔安监局" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.safetyPerson}" value="准格尔安监局" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">工作人员</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="准格尔安监局" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.workPerson}" value="准格尔安监局" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">现场操作人员</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="准格尔安监局" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.handlePerson}" value="准格尔安监局" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">重点监管技术</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="准格尔安监局" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.keyTechnolo}" value="准格尔安监局" style="width: 80%;"></td>
 		                </tr>
 		                 <tr>                
 			                  <td style="text-align: right;"><label style="margin-top: 7px;">重大危险源</label><span style="color: red;">*</span></td> 
-			                  <td><input  class="form-control" value="准格尔安监局" style="width: 80%;"></td>
+			                  <td><input  class="form-control" th:value="${company.majorHazard}" value="准格尔安监局" style="width: 80%;"></td>
 		                </tr>
               </table>
             </div>
@@ -126,5 +127,26 @@
     <script th:src="@{/jqjs/bootstrap.min.js}" ></script>
     <!-- AdminLTE App -->
     <script th:src="@{/jqjs/adminlte.min.js}" ></script>
+	<script th:src="@{/Tujs/jquery-1.10.2.min.js}"></script>
+	<script th:src="@{/Tujs/jquery.table2excel.js}"></script>
+	<script th:src="@{/Tujs/jquery.min.js}"></script>
+	<script th:src="@{/Tujs/tableExportAlter.js}"></script>
+	<script th:src="@{/Tujs/jquery.base64.js}"></script>
+	<script th:src="@{/Tujs/mybase64.js}"></script>
+<script>
+	$('button').click(function(){
+		console.log(1)
+		$("#datatable").tableExport({
+			type:'excel',
+			escape:'false',
+			exclude: ".noExl",
+			name: "Excel Document Name",
+			filename: "myFileName",
+			exclude_img: true,
+			exclude_links: true,
+			exclude_inputs: true
+		});
+	})
+</script>
 </body>
 </html>

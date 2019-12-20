@@ -23,15 +23,15 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" id="addform" th:action="@{/add}" th:method="post">
+            <form role="form" id="addform"  th:method="post">
               <div class="box-body">
                 <div class="form-group">
                   <label >检查部门</label>
-                  <input  name="sname" id="sname" class="form-control"  th:value="${session.loginUser.TId == 0 ? '准格尔安监局':'企业'}"/>
+                  <input  name="sname" id="sname" class="form-control" readonly="readonly" th:value="${session.loginUser.TId == 0 ? '准格尔安监局':'企业'}"/>
                 </div>
                 <div class="form-group">
                   <label>检查类型</label>
-               			 <select name="type" class="form-control select2" style="width: 100%;">
+               			 <select name="type" id="type" class="form-control select2" style="width: 100%;">
                            <option selected="selected">--请选择--</option>
 			                  <option  value="0" th:value="0">例行检查</option>
 			                  <option  value="1" th:value="1">突击检查</option>
@@ -46,7 +46,7 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary" onclick="$(#'addform').submit();">开始录入</button>
+                <button type="submit" class="btn btn-primary" onclick="begin()">开始录入</button>
               </div>
             </form>
           </div>
@@ -65,5 +65,15 @@
 <script th:src="@{/jqjs/bootstrap.min.js}" ></script>
 <!-- AdminLTE App -->
 <script th:src="@{/jqjs/adminlte.min.js}" ></script>
+
+<script>
+  function begin() {
+
+      sessionStorage.setItem("type",$('#type option:selected').val())
+      sessionStorage.setItem("name",$('#name').val())
+
+      window.location.href = 'entry.html';
+  }
+</script>
 </body>
 </html>

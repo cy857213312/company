@@ -33,7 +33,6 @@
 <script type="text/javascript">
 	// 基于准备好的dom，初始化echarts实例
 	var myChart = echarts.init(document.getElementById('main'));
-
 	option = {
 		tooltip: {
 			trigger: 'axis'
@@ -54,7 +53,6 @@
 		},
 		xAxis: {
 			type: 'category',
-
 			data: ['2019年1月1日',2019-2-1,2019-3-2,2019-4-2,2019-5-2,2019-6-2],
 			axisLine: {
 				lineStyle: {
@@ -166,6 +164,10 @@
 		]
 	};
 	// 使用刚指定的配置项和数据显示图表。
+    // // var res=[[${score}]];
+    // var time=[[${date}]];
+    // // option.series[0].data=res;
+    // option.xAxis[0].data=time;
 	myChart.setOption(option);
 </script>
 <!-- jQuery 3 -->

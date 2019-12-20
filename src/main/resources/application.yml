@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/company?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B8&autoReconnect=true&failOverReadOnly=false
+    url: jdbc:mysql://39.105.193.79:3306/company?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B8&autoReconnect=true&failOverReadOnly=false
     username: root
-    password: 123456
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
       #指明连接是否被空闲连接回收器(如果有)进行检验，如果检测失败，则连接将被从池中去除
     testWhileIdle: true

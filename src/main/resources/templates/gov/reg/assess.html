@@ -29,7 +29,7 @@
 
       </section>
     <!-- /.content -->
-   
+
   <!-- /.content-wrapper -->
 
   <!-- 主要的页脚 -->
@@ -44,13 +44,13 @@
            <div class="message" >
            	<table>
 				<tr><td><span>编号</span></td></tr>
-				<tr><td><input>1</input></td></tr>
+				<tr><td><input value="7.1"></td></tr>
 				<tr><td><span>内容</span></td></tr>
-				<tr><td><textarea>qqq</textarea></td></tr>
+				<tr><td><textarea style="height: 40px">危险化学品单位应当建立完善重大危险源安全管理规章制度和安全操作规程，并采取有效措施保证其得到执行</textarea></td></tr>
 				<tr><td><span>依据</span></td></tr>
-				<tr><td><textarea>qq</textarea></td></tr>
+				<tr><td><textarea>《危险化学品重大危险源监督管理暂行规定》第12条</textarea></td></tr>
 				<tr><td><span>现场情况</span></td></tr>
-				<tr><td><textarea>qq</textarea></td></tr>
+				<tr><td><textarea>一些描述</textarea></td></tr>
 			</table>
             <div class="removeMain" >
               	<a href="#" id="yes">确定</a>
@@ -61,10 +61,9 @@
   </div>
 </div>
 <!-- REQUIRED JS SCRIPTS -->
-<script type="text/javascript">
-    // 基于准备好的dom，初始化echarts实例
-    var myChart = echarts.init(document.getElementById('line'));
-    var myChart2 = echarts.init(document.getElementById('pie'));
+<!--<script type="text/javascript">-->
+<script th:inline="javascript">
+
     //折线图
     option = {
         title : {
@@ -76,9 +75,9 @@
         },
         //自定义提示框内容
         formatter: function (params) {
-            var res='<div><p>符合项：'+1+'</p></div>'
+            var res='<div><p>符合项：'+0+'</p></div>'
             res+= '<div><p>一般隐患：'+1+'</p></div>'
-            res+= '<div><p>重大隐患：'+1+'</p></div>'
+            res+= '<div><p>重大隐患：'+0+'</p></div>'
 //				for(var i=0;i<params.length;i++){
 //				res+='<p>'+params[i].seriesName+':'+params[i].data+'</p>'
 //				}
@@ -88,7 +87,7 @@
         xAxis: [{
             type: 'category',
             data: ['2019-01','2019-02','2019-03','2019-04','2019-05','2019-06'],
-            axisLine: {
+            axisLine: {//线条颜色
                 lineStyle: {
                     color: "#999"
                 }
@@ -152,6 +151,14 @@
             smooth: true
         }]
     };
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('line'));
+    var res=[[${score}]];
+    var time=[[${date}]];
+    option.series[0].data=res;
+    option.xAxis[0].data=time;
+    myChart.setOption(option);
+
     //饼图
     option2 = {
         tooltip : {
@@ -183,23 +190,11 @@
                 }
             }
         ]};
-
-
+    var myChart2 = echarts.init(document.getElementById('pie'));
     // 使用刚指定的配置项和数据显示图表。
-    myChart.setOption(option);
     myChart2.setOption(option2);
-    myChart.on('click',function(params){
-        option2 = {
-            series :{
-                data:[
-                    {value:300, name:'重大隐患'},
-                    {value:300, name:'一般隐患'},
-                    {value:300, name:'符合项'}
-                ]
-            }
-        }
 
-    })
+
 </script>
 <!-- jQuery 3 -->
 <script th:src="@{/jqjs/jquery.min.js}" ></script>
@@ -207,6 +202,6 @@
 <script th:src="@{/jqjs/bootstrap.min.js}" ></script>
 <!-- AdminLTE App -->
 <script th:src="@{/jqjs/adminlte.min.js}" ></script>
-
+<script th:src="@{/Tujs/zhezhao.js}" ></script>
 </body>
 </html>

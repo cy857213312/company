@@ -20,7 +20,7 @@
        		检查记录
         <small>进行其它操作</small>
     	  </h1>
-     	<a href="#">添加</a>
+     	<a th:href="@{/toAdd}" href="#">添加</a>
      	<a href="#">备份信息</a>
      	<a href="#">备份细节</a>
     	</div>
@@ -48,12 +48,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>2029-11-01</td>
-                  <td>准格尔安监局</td>
-                  <td>突击检查</td>
-                  <td>王一</td>
-                  <td><a th:href="@{/toView}">查看</a></td>
+                <tr th:each="c : ${checks}">
+                  <td th:text="${#dates.format(c.createTime,'yyyy-MM-dd')}">2029-11-01</td>
+                  <td th:text="${c.sname}">准格尔安监局</td>
+                  <td th:text="${c.type== 0 ? '例行检查':(c.type==1 ? '突击检查':'特殊日期检查' )}">突击检查</td>
+                  <td th:text="${c.name}">王一</td>
+                  <td><a th:href="@{/toView/} + ${c.id}" style="color: #0c89de">查看</a></td>
                 </tr>
                 </tbody>
               </table>

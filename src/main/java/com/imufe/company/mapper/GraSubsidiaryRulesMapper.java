@@ -11,6 +11,8 @@ import java.util.List;
 
 @Repository
 public interface GraSubsidiaryRulesMapper {
+    List<GraSubsidiaryRules> getRules();
+    GraSubsidiaryRules selectByNumber(String number);
     int deleteByPrimaryKey(Integer id);
 
     int insert(GraSubsidiaryRules record);
